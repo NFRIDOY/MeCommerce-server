@@ -1,0 +1,67 @@
+[
+    {
+        "image": "https://images.unsplash.com/photo-1559563362-c667ba5f5480?q=80&w=1901&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Rose Plant",
+        "description": "Beautiful red rose plant",
+        "price": 15.99,
+        "category": "Flowers",
+        "inventory": {
+            "quantity": 50,
+            "inStock": true
+        },
+        "rating": 4.5,
+        "isDeleted": false
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1611211232932-da3113c5b960?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Snake Plant",
+        "description": "Low-maintenance indoor plant",
+        "price": 25.0,
+        "category": "Indoor Plants",
+        "inventory": {
+            "quantity": 30,
+            "inStock": true
+        },
+        "rating": 4.7,
+        "isDeleted": false
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1633545382904-5e97dedc6e19?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Apple Tree",
+        "description": "Produces delicious apples",
+        "price": 50.0,
+        "category": "Fruit Trees",
+        "inventory": {
+            "quantity": 10,
+            "inStock": true
+        },
+        "rating": 4.3,
+        "isDeleted": false
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1554631221-f9603e6808be?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Cactus",
+        "description": "Easy to care for cactus plant",
+        "price": 10.0,
+        "category": "Succulents",
+        "inventory": {
+            "quantity": 100,
+            "inStock": true
+        },
+        "rating": 4.6,
+        "isDeleted": false
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1612217958164-d7d40ac738ac?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Lavender Plant",
+        "description": "Fragrant lavender for your garden",
+        "price": 12.0,
+        "category": "Herbs",
+        "inventory": {
+            "quantity": 75,
+            "inStock": true
+        },
+        "rating": 4.8,
+        "isDeleted": false
+    }
+]
