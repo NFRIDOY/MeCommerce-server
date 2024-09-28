@@ -8,6 +8,7 @@ async function main() {
 
     app.listen(config.port, () => {
       console.log(`Example app listening on port ${config.port}`);
+      console.log(`Config the Cors Oring Before Deploying`);
     });
   } catch (err) {
     console.log("Error ==> ", err);

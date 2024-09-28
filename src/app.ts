@@ -6,6 +6,7 @@ const app = express();
 // Define CORS options
 const corsOptions: cors.CorsOptions = {
     origin: "http://localhost:5173", // Allow only this origin
+    // origin: "http://localhost:5173", // Allow only this origin // Before Deployment
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
     credentials: true, // Allow cookies to be sent
