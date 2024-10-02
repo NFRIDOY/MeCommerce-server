@@ -25,10 +25,7 @@ const userSchema = new Schema<IUser>({
     address: {
         type: String,
         required: [true, "Address is required"],
-    },
-    isDeleted: {
-        type: Boolean,
-    },
+    }
 });
 
 export const User = model<IUser>("User", userSchema);

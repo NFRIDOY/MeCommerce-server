@@ -1,14 +1,16 @@
 import express from "express";
 import { userControllers } from "./user.controller";
 
-export const router = express.Router();
+const router = express.Router();
 
-router.post("/create-admin", userControllers.createAdmin);
+// router.post("/create-admin", userControllers.createUser);
 
 ////////////////////////////////
 /** Signup User */
-router.post("/auth/signup", userControllers.createUser);
+router.post("/signup", userControllers.createUser);
 /** Login User */
-// router.post("/auth/login", userControllers.userAccess);
+// router.post("/login", userControllers.userAccess);
 
+
+export const UserRoutes = router;
 

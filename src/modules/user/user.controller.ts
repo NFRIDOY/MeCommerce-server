@@ -1,26 +1,17 @@
 import { RequestHandler } from "express";
 import { UserServices } from "./user.services";
+import { catchAsync } from "../../utils/catchAsync";
 
-const createAdmin: RequestHandler = async (req, res) => {
-    const result = await UserServices.createAdminIntoDB(req.body);
-
-    res.status(200).json({
-        success: true,
-        message: "Admin is created successfully!",
-        data: result,
-    });
-};
-const createUser: RequestHandler = async (req, res) => {
+const createUser: RequestHandler = catchAsync(async (req, res) => {
     const result = await UserServices.createUserIntoDB(req.body);
 
     res.status(200).json({
         success: true,
-        message: "Admin is created successfully!",
+        message: `${req?.body?.role} is created successfully!`,
         data: result,
     });
-};
+});
 
 export const userControllers = {
-    createAdmin,
-    createUser
+    createUser,
 };

@@ -7,5 +7,4 @@ export interface IUser {
     phone: string;
     role: keyof typeof USER_Role;
     address: string;
-    isDeleted: boolean;
 }

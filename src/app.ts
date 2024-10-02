@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import { globalErrorHandler, notFound } from "./middlewares";
+import { UserRoutes } from "./modules/user/user.route";
 const app = express();
 
 // Define CORS options
@@ -18,7 +19,7 @@ app.use(cors(corsOptions));
 //parsers
 app.use(express.json());
 
-// app.use("/api/products", ProductRouters);
+app.use("/api/auth", UserRoutes);
 
 app.get("/", (req: Request, res: Response) => {
     res.send("Sports Facility Booking Platfrom Server is Running");
