@@ -22,6 +22,10 @@ const userSchema = new Schema<IUser>({
         required: [true, "Password is required"],
         select: 0,
     },
+    address: {
+        type: String,
+        required: [true, "Address is required"],
+    },
 });
 
 export const User = model<IUser>("User", userSchema);
