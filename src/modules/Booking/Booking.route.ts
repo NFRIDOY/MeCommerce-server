@@ -1,5 +1,7 @@
 // import { router } from "../user/user.route";
+// import express from 'express';
 
+// const router = express.Router();
 // /** User Only */
 // /** POST /api/facility */
 // router.post("/bookings", bookingControllers.createBookings);

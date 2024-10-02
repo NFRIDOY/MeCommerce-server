@@ -1,7 +1,7 @@
-
-
 // import { router } from "../user/user.route";
+// import express from 'express';
 
+// const router = express.Router();
 // /** Admin Only */
 // /** POST /facility */
 // router.post("/facility", userControllers.createFacility);

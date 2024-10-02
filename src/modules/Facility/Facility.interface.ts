@@ -3,5 +3,5 @@ export interface IFacility {
     description: string;
     pricePerHour: string;
     location: string;
-    isDeleted: boolean;
+    isDeleted?: boolean;
 }
