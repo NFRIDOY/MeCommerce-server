@@ -3,6 +3,8 @@ import cors from "cors";
 import { globalErrorHandler, notFound } from "./middlewares";
 import { UserRoutes } from "./modules/user/user.route";
 const app = express();
+const rootLink = `http://localhost:5000`;
+// const rootLink = `https://sports-facility-booking-platform-server-ten.vercel.app`;
 
 // Define CORS options
 const corsOptions: cors.CorsOptions = {
@@ -23,6 +25,23 @@ app.use("/api/auth", UserRoutes);
 
 app.get("/", (req: Request, res: Response) => {
     res.send("Sports Facility Booking Platfrom Server is Running");
+});
+app.get("/api", (req: Request, res: Response) => {
+    res.send(`Welcome To Sports Facility Booking Platfrom Server API Documentation <br />
+        * Available APIs * <br />
+        [GET] => ${rootLink}/api/users  <br />
+        [GET] => ${rootLink}/api/facility  <br />
+        `);
+});
+app.get("/vercel", (req: Request, res: Response) => {
+    if (process.env.VERCEL) {
+        console.log("This project is running on Vercel!");
+        res.send("Sports Facility Booking Platfrom Server is Running on Vercel!");
+    } else {
+        console.log("This project is not running on Vercel.");
+        res.send("Sports Facility Booking Platfrom Server is not Running on Vercel!");
+    }
+
 });
 
 // "Not Found" middleware

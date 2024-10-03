@@ -11,6 +11,17 @@ const createUser: RequestHandler = catchAsync(async (req, res) => {
         data: result,
     });
 });
+/** GET Users For testing */
+//! Testing 
+//// const getUsers: RequestHandler = catchAsync(async (req, res) => {
+////     const result = await UserServices.getUsersFromDB();
+//// 
+////     res.status(200).json({
+////         success: true,
+////         message: `Data get successfully!`,
+////         data: result,
+////     });
+//// });
 
 export const userControllers = {
     createUser,
