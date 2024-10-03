@@ -12,8 +12,7 @@ router.post("/signup", userControllers.createUser);
 // router.post("/login", userControllers.userAccess);
 
 /** testing User GET */
-//// router.get("/users", userControllers.getUsers);
-
+//! Testing
+router.get("/users", userControllers.getUsers);
 
 export const UserRoutes = router;
-

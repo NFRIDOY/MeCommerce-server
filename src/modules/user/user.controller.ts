@@ -12,17 +12,18 @@ const createUser: RequestHandler = catchAsync(async (req, res) => {
     });
 });
 /** GET Users For testing */
-//! Testing 
-//// const getUsers: RequestHandler = catchAsync(async (req, res) => {
-////     const result = await UserServices.getUsersFromDB();
-//// 
-////     res.status(200).json({
-////         success: true,
-////         message: `Data get successfully!`,
-////         data: result,
-////     });
-//// });
+//! Testing
+const getUsers: RequestHandler = catchAsync(async (req, res) => {
+    const result = await UserServices.getUsersFromDB();
+
+    res.status(200).json({
+        success: true,
+        message: `Data get successfully!`,
+        data: result,
+    });
+});
 
 export const userControllers = {
     createUser,
+    getUsers
 };
