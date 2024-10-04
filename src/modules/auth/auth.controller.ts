@@ -16,7 +16,7 @@ const register = catchAsync(async (req, res) => {
 const login = catchAsync(async (req, res) => {
   const { accessToken, user } = await AuthServices.login(req.body);
 
-  res.cookie("Authorization", "Bearer" + accessToken, {
+  res.cookie("token", "Bearer" + accessToken, {
     httpOnly: true,
     secure: true,
     // secure: config.NODE_ENV === "production",
