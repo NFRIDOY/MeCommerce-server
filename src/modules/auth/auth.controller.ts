@@ -1,3 +1,4 @@
+// import config from "../../config";
 import { catchAsync } from "../../utils/catchAsync";
 import { AuthServices } from "./auth.service";
 
@@ -6,6 +7,7 @@ const register = catchAsync(async (req, res) => {
 
   res.status(200).json({
     success: true,
+    statusCode: 200,
     message: "User registered successfully",
     data: result,
   });
@@ -14,8 +16,15 @@ const register = catchAsync(async (req, res) => {
 const login = catchAsync(async (req, res) => {
   const { accessToken, user } = await AuthServices.login(req.body);
 
+  res.cookie("Authorization", "Bearer" + accessToken, {
+    httpOnly: true,
+    secure: true,
+    // secure: config.NODE_ENV === "production",
+  });
+
   res.status(200).json({
     success: true,
+    statusCode: 200,
     message: "User logged in successfully",
     token: accessToken,
     date: user
