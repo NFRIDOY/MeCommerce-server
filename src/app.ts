@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import { globalErrorHandler, notFound } from "./middlewares";
+import { AuthRoutes } from "./modules/auth/auth.route";
 import { UserRoutes } from "./modules/user/user.route";
 const app = express();
 const rootLink = `http://localhost:5000`;
@@ -8,8 +9,8 @@ const rootLink = `http://localhost:5000`;
 
 // Define CORS options
 const corsOptions: cors.CorsOptions = {
-    origin: "http://localhost:5173", // Allow only this origin
     // origin: "http://localhost:5173", // Allow only this origin // Before Deployment
+    origin: "http://localhost:5173", // Allow only this origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
     credentials: true, // Allow cookies to be sent
@@ -21,7 +22,8 @@ app.use(cors(corsOptions));
 //parsers
 app.use(express.json());
 
-app.use("/api/auth", UserRoutes);
+app.use("/api/auth", AuthRoutes);
+app.use("/api/user", UserRoutes);
 
 app.get("/", (req: Request, res: Response) => {
     res.send("Sports Facility Booking Platfrom Server is Running");

@@ -13,6 +13,6 @@ router.post("/signup", userControllers.createUser);
 
 /** testing User GET */
 //! Testing
-router.get("/users", userControllers.getUsers);
+router.get("/", userControllers.getUsers);
 
 export const UserRoutes = router;
