@@ -8,7 +8,7 @@ const router = express.Router();
 router.post("/", auth("admin"), facilityControllers.createFacility);
 // router.post("/", facilityControllers.createFacility);
 /** PUT /api/facility/:id */
-// router.put("/facility/:id", facilityControllers.updateFacilityById);
+router.put("/:id", facilityControllers.updateFacilityById);
 /** Soft DELETE /api/facility/:id */
 // router.delete("/facility/:id", facilityControllers.deleteFacilityById);
 /** GET All /api/facility */

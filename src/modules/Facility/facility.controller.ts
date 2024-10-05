@@ -12,6 +12,16 @@ const createFacility: RequestHandler = catchAsync(async (req, res) => {
         data: result,
     });
 });
+const updateFacilityById: RequestHandler = catchAsync(async (req, res) => {
+    const result = await FacilityServices.updateFacilityById(req.params.id, req.body);
+
+    res.status(200).json({
+        success: true,
+        statusCode: 200,
+        message: `Facility updated successfully`,
+        data: result,
+    });
+});
 /** GET Facilitys */
 const getFacilitys: RequestHandler = catchAsync(async (req, res) => {
     const result = await FacilityServices.getFacilitysFromDB();
@@ -25,5 +35,6 @@ const getFacilitys: RequestHandler = catchAsync(async (req, res) => {
 
 export const facilityControllers = {
     createFacility,
+    updateFacilityById,
     getFacilitys
 };

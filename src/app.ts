@@ -27,6 +27,7 @@ app.use("/api/auth", AuthRoutes);
 app.use("/api/user", UserRoutes);
 app.use("/api/facility", FacilityRouters);
 
+
 app.get("/", (req: Request, res: Response) => {
     res.send("Sports Facility Booking Platfrom Server is Running");
 });
