@@ -1,6 +1,6 @@
-import express from 'express';
-import { facilityControllers } from './facility.controller';
-import { auth } from '../../middlewares/auth';
+import express from "express";
+import { facilityControllers } from "./facility.controller";
+import { auth } from "../../middlewares/auth";
 
 const router = express.Router();
 /** Admin Only */
@@ -8,9 +8,9 @@ const router = express.Router();
 router.post("/", auth("admin"), facilityControllers.createFacility);
 // router.post("/", facilityControllers.createFacility);
 /** PUT /api/facility/:id */
-router.put("/:id", facilityControllers.updateFacilityById);
+router.put("/:id", auth("admin"), facilityControllers.updateFacilityById);
 /** Soft DELETE /api/facility/:id */
-router.delete("/:id", facilityControllers.deleteFacilityById);
+router.delete("/:id", auth("admin"), facilityControllers.deleteFacilityById);
 /** GET All /api/facility */
 router.get("/", facilityControllers.getFacilitys);
 /** GET Check Availability /api/check-availability */
