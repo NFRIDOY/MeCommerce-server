@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import { IFacility } from "./Facility.interface";
+import { IFacility } from "./facility.interface";
 
 const facilitySchema = new Schema<IFacility>({
     name: {
@@ -20,6 +20,8 @@ const facilitySchema = new Schema<IFacility>({
     },
     isDeleted: {
         type: Boolean,
+        default: false,
+        select: true
     },
 });
 

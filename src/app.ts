@@ -3,6 +3,7 @@ import cors from "cors";
 import { globalErrorHandler, notFound } from "./middlewares";
 import { AuthRoutes } from "./modules/auth/auth.route";
 import { UserRoutes } from "./modules/user/user.route";
+import { FacilityRouters } from "./modules/Facility/facility.route";
 const app = express();
 const rootLink = `http://localhost:5000`;
 // const rootLink = `https://sports-facility-booking-platform-server-ten.vercel.app`;
@@ -24,6 +25,7 @@ app.use(express.json());
 
 app.use("/api/auth", AuthRoutes);
 app.use("/api/user", UserRoutes);
+app.use("/api/facility", FacilityRouters);
 
 app.get("/", (req: Request, res: Response) => {
     res.send("Sports Facility Booking Platfrom Server is Running");
