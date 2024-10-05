@@ -33,10 +33,11 @@ export const auth = (...requiredRoles: (keyof typeof USER_Role)[]) => {
             if (!user) {
                 throw new AppError(401, "User not found");
             }
-            // console.log(
+            /*
+            console.log(
                 "requiredRoles.includes(role)",
                 requiredRoles.includes(role)
-            );
+            );*/
             if (!requiredRoles.includes(role)) {
                 throw new AppError(
                     401,
