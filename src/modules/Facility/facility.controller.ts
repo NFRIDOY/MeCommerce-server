@@ -23,12 +23,12 @@ const updateFacilityById: RequestHandler = catchAsync(async (req, res) => {
     });
 });
 const deleteFacilityById: RequestHandler = catchAsync(async (req, res) => {
-    const result = await FacilityServices.deleteSoftFacilityById(req.params.id, req.body);
+    const result = await FacilityServices.deleteSoftFacilityById(req.params.id);
 
     res.status(200).json({
         success: true,
         statusCode: 200,
-        message: `Facility updated successfully`,
+        message: `Facility deleted successfully`,
         data: result,
     });
 });

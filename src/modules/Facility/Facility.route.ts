@@ -10,7 +10,7 @@ router.post("/", auth("admin"), facilityControllers.createFacility);
 /** PUT /api/facility/:id */
 router.put("/:id", facilityControllers.updateFacilityById);
 /** Soft DELETE /api/facility/:id */
-router.delete("/facility/:id", facilityControllers.deleteFacilityById);
+router.delete("/:id", facilityControllers.deleteFacilityById);
 /** GET All /api/facility */
 router.get("/", facilityControllers.getFacilitys);
 /** GET Check Availability /api/check-availability */
