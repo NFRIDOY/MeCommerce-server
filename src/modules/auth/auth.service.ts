@@ -5,13 +5,15 @@ import { User } from "../user/user.model";
 import { TLoginUser } from "./auth.interface";
 import config from "../../config";
 import jwt from "jsonwebtoken";
+import AppError from "../../errors/AppError";
 
 const register = async (payload: IUser): Promise<any> => {
     //user existence check
     const user = await User.findOne({ email: payload.email });
 
     if (user) {
-        throw new Error("User already exists");
+        // throw new Error("User already exists");
+        throw new AppError(404, "User already exists");
     }
 
     //create user
