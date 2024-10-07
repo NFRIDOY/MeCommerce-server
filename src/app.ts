@@ -11,7 +11,7 @@ const rootLink = `http://localhost:5000`;
 // Define CORS options
 const corsOptions: cors.CorsOptions = {
     // origin: "http://localhost:5173", // Allow only this origin // Before Deployment
-    origin: "http://localhost:5173", // Allow only this origin
+    origin: ["http://localhost:5173", "https://sports-facility-booking-platform-phi.vercel.app"], // Allow only this origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
     credentials: true, // Allow cookies to be sent
@@ -26,6 +26,7 @@ app.use(express.json());
 app.use("/api/auth", AuthRoutes);
 app.use("/api/user", UserRoutes);
 app.use("/api/facility", FacilityRouters);
+app.use("/api/check-availability", FacilityRouters);
 
 
 app.get("/", (req: Request, res: Response) => {
