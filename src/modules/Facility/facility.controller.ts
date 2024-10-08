@@ -53,7 +53,7 @@ const getFacilitys: RequestHandler = catchAsync(async (req, res) => {
     res.status(200).json({
         success: true,
         message: `Data get successfully!`,
-        data: result,
+        data: result.filter(facility => facility.isDeleted === false),
     });
 });
 
