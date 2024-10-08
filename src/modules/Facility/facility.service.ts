@@ -23,6 +23,10 @@ const deleteSoftFacilityById = async (_id: string) => {
     );
     return facility;
 };
+const getFacilityByIdFromDB = async (_id: string) => {
+    const facility = await Facility.findOne({ _id });
+    return facility;
+};
 const getFacilitysFromDB = async () => {
     const facility = await Facility.find();
     return facility;
@@ -31,5 +35,6 @@ export const FacilityServices = {
     createFacilityIntoDB,
     updateFacilityById,
     deleteSoftFacilityById,
+    getFacilityByIdFromDB,
     getFacilitysFromDB,
 };

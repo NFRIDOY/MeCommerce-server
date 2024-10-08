@@ -13,7 +13,10 @@ const createFacility: RequestHandler = catchAsync(async (req, res) => {
     });
 });
 const updateFacilityById: RequestHandler = catchAsync(async (req, res) => {
-    const result = await FacilityServices.updateFacilityById(req.params.id, req.body);
+    const result = await FacilityServices.updateFacilityById(
+        req.params.id,
+        req.body
+    );
 
     res.status(200).json({
         success: true,
@@ -32,6 +35,17 @@ const deleteFacilityById: RequestHandler = catchAsync(async (req, res) => {
         data: result,
     });
 });
+/** GET A Facilitys By ID */
+const getFacilityById: RequestHandler = catchAsync(async (req, res) => {
+    const { id } = req.params;
+    const result = await FacilityServices.getFacilityByIdFromDB(id);
+
+    res.status(200).json({
+        success: true,
+        message: `Data get successfully!`,
+        data: result,
+    });
+});
 /** GET Facilitys */
 const getFacilitys: RequestHandler = catchAsync(async (req, res) => {
     const result = await FacilityServices.getFacilitysFromDB();
@@ -47,5 +61,6 @@ export const facilityControllers = {
     createFacility,
     updateFacilityById,
     deleteFacilityById,
-    getFacilitys
+    getFacilityById,
+    getFacilitys,
 };

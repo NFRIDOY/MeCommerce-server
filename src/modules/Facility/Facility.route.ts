@@ -3,7 +3,7 @@ import { facilityControllers } from "./facility.controller";
 import { auth } from "../../middlewares/auth";
 
 const router = express.Router();
-/** Admin Only */
+//** Admin Only */
 /** POST /facility */
 router.post("/", auth("admin"), facilityControllers.createFacility);
 // router.post("/", facilityControllers.createFacility);
@@ -11,6 +11,14 @@ router.post("/", auth("admin"), facilityControllers.createFacility);
 router.put("/:id", auth("admin"), facilityControllers.updateFacilityById);
 /** Soft DELETE /api/facility/:id */
 router.delete("/:id", auth("admin"), facilityControllers.deleteFacilityById);
+
+//** Any One */
+/** GET A Facility By ID */
+router.get(
+    "/:id",
+    // auth("admin", "user"),
+    facilityControllers.getFacilityById
+);
 /** GET All /api/facility */
 router.get("/", facilityControllers.getFacilitys);
 /** GET Check Availability /api/check-availability */
