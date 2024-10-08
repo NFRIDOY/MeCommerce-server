@@ -11,6 +11,18 @@ const createUser: RequestHandler = catchAsync(async (req, res) => {
         data: result,
     });
 });
+/** getUser By ID GET */
+const getUserById: RequestHandler = catchAsync(async (req, res) => {
+    const { id } = req.params;
+    const result = await UserServices.getUserByIdFromDB(id);
+
+    res.status(200).json({
+        success: true,
+        message: `Data get successfully!`,
+        data: result,
+    });
+});
+
 /** GET Users For testing */
 //! Testing
 const getUsers: RequestHandler = catchAsync(async (req, res) => {
@@ -25,5 +37,6 @@ const getUsers: RequestHandler = catchAsync(async (req, res) => {
 
 export const userControllers = {
     createUser,
-    getUsers
+    getUserById,
+    getUsers,
 };

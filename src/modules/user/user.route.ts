@@ -7,9 +7,13 @@ const router = express.Router();
 
 ////////////////////////////////
 /** Signup User */
-router.post("/signup", userControllers.createUser);
+// router.post("/signup", userControllers.createUser);
 /** Login User */
 // router.post("/login", userControllers.userAccess);
+
+/** getUser By ID GET */
+
+router.get("/:id", userControllers.getUserById)
 
 /** testing User GET */
 //! Testing
