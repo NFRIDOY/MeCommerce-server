@@ -33,7 +33,6 @@ const bookingSchema = new Schema<IBooking>({
         type: String,
         enum: Object.keys(Booking_status),
         default: Booking_status.unconfirmed,
-        select: true,
     },
 });
 
