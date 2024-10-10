@@ -5,7 +5,7 @@ import { Booking_status } from "./Booking.constants";
 const bookingSchema = new Schema<IBooking>({
     date: {
         type: Date,
-        required: [true, "Name is required"],
+        required: [true, "Date is required"],
     },
     startTime: {
         type: String,
@@ -18,21 +18,21 @@ const bookingSchema = new Schema<IBooking>({
     user: {
         type: Schema.Types.ObjectId,
         ref: "User",
-        required: [true, "User is required"],
+        required: [true, "User ID is required"],
     },
     facility: {
         type: Schema.Types.ObjectId,
         ref: "Facility",
-        required: [true, "Location is required"],
+        required: [true, "Facility ID is required"],
     },
     payableAmount: {
         type: Number,
-        required: [true, "Location is required"],
+        required: [true, "Payable Amount is required"],
     },
     isBooked: {
         type: String,
         enum: Object.keys(Booking_status),
-        default: Booking_status.unconfirmed,
+        default: Booking_status.confirmed,
     },
 });
 
