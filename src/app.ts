@@ -13,7 +13,10 @@ const rootLink = `http://localhost:5000`;
 // Define CORS options
 const corsOptions: cors.CorsOptions = {
     // origin: "http://localhost:5173", // Allow only this origin // Before Deployment
-    origin: ["http://localhost:5173", "https://sports-facility-booking-platform-phi.vercel.app"], // Allow only this origin
+    origin: [
+        "http://localhost:5173",
+        "https://sports-facility-booking-platform-phi.vercel.app",
+    ], // Allow only this origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
     credentials: true, // Allow cookies to be sent
@@ -46,13 +49,18 @@ app.get("/api", (req: Request, res: Response) => {
 });
 app.get("/vercel", (req: Request, res: Response) => {
     if (process.env.VERCEL) {
+        // eslint-disable-next-line no-console
         console.log("This project is running on Vercel!");
-        res.send("Sports Facility Booking Platfrom Server is Running on Vercel!");
+        res.send(
+            "Sports Facility Booking Platfrom Server is Running on Vercel!"
+        );
     } else {
+        // eslint-disable-next-line no-console
         console.log("This project is not running on Vercel.");
-        res.send("Sports Facility Booking Platfrom Server is not Running on Vercel!");
+        res.send(
+            "Sports Facility Booking Platfrom Server is not Running on Vercel!"
+        );
     }
-
 });
 
 // "Not Found" middleware
