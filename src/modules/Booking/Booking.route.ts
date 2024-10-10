@@ -15,4 +15,4 @@ router.post("/", auth("user"), bookingControllers.createBooking);
 // /** GET All /api/bookings */
 // router.get("/bookings", bookingControllers.getAllBookings);
 
-export const BookingRoutes = router;
+export const BookingRouters = router;

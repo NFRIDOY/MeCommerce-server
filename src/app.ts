@@ -5,6 +5,7 @@ import { AuthRoutes } from "./modules/auth/auth.route";
 import { UserRoutes } from "./modules/user/user.route";
 import { FacilityRouters } from "./modules/Facility/facility.route";
 import cookieParser from "cookie-parser";
+import { BookingRouters } from "./modules/Booking/Booking.route";
 const app = express();
 const rootLink = `http://localhost:5000`;
 // const rootLink = `https://sports-facility-booking-platform-server-ten.vercel.app`;
@@ -29,7 +30,7 @@ app.use("/api/auth", AuthRoutes);
 app.use("/api/user", UserRoutes);
 app.use("/api/facility", FacilityRouters);
 app.use("/api/check-availability", FacilityRouters);
-app.use("/api/bookings", FacilityRouters);
+app.use("/api/bookings", BookingRouters);
 
 
 app.get("/", (req: Request, res: Response) => {
