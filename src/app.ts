@@ -4,6 +4,7 @@ import { globalErrorHandler, notFound } from "./middlewares";
 import { AuthRoutes } from "./modules/auth/auth.route";
 import { UserRoutes } from "./modules/user/user.route";
 import { FacilityRouters } from "./modules/Facility/facility.route";
+import cookieParser from "cookie-parser";
 const app = express();
 const rootLink = `http://localhost:5000`;
 // const rootLink = `https://sports-facility-booking-platform-server-ten.vercel.app`;
@@ -22,6 +23,7 @@ app.use(cors(corsOptions));
 
 //parsers
 app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api/auth", AuthRoutes);
 app.use("/api/user", UserRoutes);
