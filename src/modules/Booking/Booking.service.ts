@@ -1,5 +1,6 @@
 import AppError from "../../errors/AppError";
 import { IBooking } from "./Booking.interface";
+import { Booking } from "./Booking.model";
 
 const createBookingIntoDB = async (payload: IBooking) => {
     const booking = await Booking.create(payload);

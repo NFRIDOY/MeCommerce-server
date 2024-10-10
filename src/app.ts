@@ -29,6 +29,7 @@ app.use("/api/auth", AuthRoutes);
 app.use("/api/user", UserRoutes);
 app.use("/api/facility", FacilityRouters);
 app.use("/api/check-availability", FacilityRouters);
+app.use("/api/bookings", FacilityRouters);
 
 
 app.get("/", (req: Request, res: Response) => {
