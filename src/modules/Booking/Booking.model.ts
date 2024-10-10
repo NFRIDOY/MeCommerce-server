@@ -27,7 +27,7 @@ const bookingSchema = new Schema<IBooking>({
     },
     payableAmount: {
         type: Number,
-        required: [true, "Payable Amount is required"],
+        // required: [true, "Payable Amount is required"],
     },
     isBooked: {
         type: String,
