@@ -43,18 +43,29 @@ const getBookingById: RequestHandler = catchAsync(async (req, res) => {
 
     res.status(200).json({
         success: true,
-        message: `Data get successfully!`,
+        message: `Bookings retrieved successfully`,
         data: result,
     });
 });
+// /** GET user Bookings */
+// const getUserBookings: RequestHandler = catchAsync(async (req, res) => {
+//     const result = await BookingServices.getBookingsFromDB();
+
+//     res.status(200).json({
+//         success: true,
+//         message: `Bookings retrieved successfully`,
+//         data: result,
+//     });
+// });
 /** GET Bookings */
 const getBookings: RequestHandler = catchAsync(async (req, res) => {
-    const result = await BookingServices.getBookingsFromDB();
+    const { user, facility } = req.body;
+    const result = await BookingServices.getBookingsFromDB(user, facility);
 
     res.status(200).json({
         success: true,
-        message: `Data get successfully!`,
-        data: result,
+        message: `Bookings retrieved successfully`,
+        data: {...result},
     });
 });
 
@@ -63,5 +74,6 @@ export const bookingControllers = {
     updateBookingById,
     deleteBookingById,
     getBookingById,
+    // getUserBookings,
     getBookings,
 };
