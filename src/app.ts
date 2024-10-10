@@ -26,13 +26,14 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
+/** Routers */
 app.use("/api/auth", AuthRoutes);
 app.use("/api/user", UserRoutes);
 app.use("/api/facility", FacilityRouters);
 app.use("/api/check-availability", FacilityRouters);
 app.use("/api/bookings", BookingRouters);
 
-
+/** Root Routers */
 app.get("/", (req: Request, res: Response) => {
     res.send("Sports Facility Booking Platfrom Server is Running");
 });
