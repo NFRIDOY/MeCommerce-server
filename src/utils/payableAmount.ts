@@ -1,3 +1,10 @@
-// export const payableAmount = (endTime: string, startTime: string, pricePerHour) => {
-//     return (Number(endTime) - Number(startTime)) * pricePerHour;
-// };
+import { timeDiff } from "./timeParser";
+
+export const payableAmount = (
+    startTime: string,
+    endTime: string,
+    pricePerHour: number
+) => {
+    const time = timeDiff(startTime, endTime);
+    return time * pricePerHour;
+};

@@ -27,13 +27,25 @@ const bookingSchema = new Schema<IBooking>({
     },
     payableAmount: {
         type: Number,
-        // required: [true, "Payable Amount is required"],
+        required: [true, "Payable Amount is required"],
     },
     isBooked: {
         type: String,
         enum: Object.keys(Booking_status),
         default: Booking_status.confirmed,
+        // required: [true, "isBooked status is required"],
     },
 });
+
+// bookingSchema.pre("save", async function (next) {
+//     // const user = this;
+
+// const getPayableAmount = payableAmount(this.startTime, this.endTime, this.)
+
+//     }
+//     );
+
+//     next();
+// });
 
 export const Booking = model<IBooking>("Booking", bookingSchema);
