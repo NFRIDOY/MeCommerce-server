@@ -13,7 +13,8 @@ router.post("/", auth("user"), bookingControllers.createBooking);
 
 // /** User Only */
 // /** GET /api/bookings/user */
-//! testing Add auth("user")
+//! testing 
+//! Add auth("user")
 router.get("/user", bookingControllers.getBookings);
 // router.get("/user", bookingControllers.getUserBookings);
 

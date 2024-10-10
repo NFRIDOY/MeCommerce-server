@@ -1,9 +1,12 @@
 import { RequestHandler } from "express";
 import { catchAsync } from "../../utils/catchAsync";
 import { BookingServices } from "./Booking.service";
+import { authGetUser } from "../auth/authGetUser.util";
 
 const createBooking: RequestHandler = catchAsync(async (req, res) => {
-    const result = await BookingServices.createBookingIntoDB(req.body);
+    const accessToken = req.headers.authorization;
+    const user = await authGetUser(accessToken as string);
+    const result = await BookingServices.createBookingIntoDB(req.body, user);
 
     res.status(200).json({
         success: true,
@@ -59,13 +62,15 @@ const getBookingById: RequestHandler = catchAsync(async (req, res) => {
 // });
 /** GET Bookings */
 const getBookings: RequestHandler = catchAsync(async (req, res) => {
-    const { user, facility } = req.body;
+    const accessToken = req.headers.authorization;
+    const user = await authGetUser(accessToken as string);
+    const { facility } = req.body;
     const result = await BookingServices.getBookingsFromDB(user, facility);
 
     res.status(200).json({
         success: true,
         message: `Bookings retrieved successfully`,
-        data: {...result},
+        data: { ...result },
     });
 });
 

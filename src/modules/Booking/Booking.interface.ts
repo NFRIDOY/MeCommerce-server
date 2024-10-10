@@ -26,3 +26,9 @@ export interface IBooking {
     payableAmount: number;
     isBooked: keyof typeof Booking_status;
 }
+export interface IBookingRequest {
+    date: Date;
+    startTime: string;
+    endTime: string;
+    facility: Types.ObjectId | IFacility;
+}

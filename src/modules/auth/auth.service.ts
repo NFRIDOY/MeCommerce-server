@@ -44,6 +44,7 @@ const login = async (payload: TLoginUser) => {
 
     // JWT
     const jwtPayload = {
+        id: user._id,
         name: user.name,
         email: user.email,
         role: user.role,
