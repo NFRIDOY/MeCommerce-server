@@ -1,3 +1,8 @@
+import { Types } from "mongoose";
+import { IFacility } from "../Facility/facility.interface";
+import { IUser } from "../user/user.interface";
+import { Booking_status } from "./Booking.constants";
+
 /**
  * 
 **Booking Model:**
@@ -11,11 +16,13 @@
 *   `isBooked`: Status of the booking (confirmed, unconfirmed, or canceled).
  */
 export interface IBooking {
-    date: string;
+    date: Date;
     startTime: string;
     endTime: string;
-    user: string;
-    facility: string;
+    user: Types.ObjectId | IUser;
+    facility: Types.ObjectId | IFacility;
+    // user: string;
+    // facility: string;
     payableAmount: number;
-    isBooked: boolean;
+    isBooked: keyof typeof Booking_status;
 }

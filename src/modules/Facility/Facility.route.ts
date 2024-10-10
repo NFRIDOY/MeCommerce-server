@@ -12,7 +12,7 @@ router.put("/:id", auth("admin"), facilityControllers.updateFacilityById);
 /** Soft DELETE /api/facility/:id */
 router.delete("/:id", auth("admin"), facilityControllers.deleteFacilityById);
 
-//** Any One */
+//*** Any One */
 /** GET A Facility By ID */
 router.get(
     "/:id",

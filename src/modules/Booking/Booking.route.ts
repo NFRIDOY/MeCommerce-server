@@ -1,9 +1,9 @@
-// import express from 'express';
+import express from 'express';
 
-// const router = express.Router();
+const router = express.Router();
 /** User Only */
-/** POST /api/facility */
-// router.post("/bookings", bookingControllers.createBookings);
+/** POST /api/facility 8. Create a Booking (User Only) */
+router.post("/bookings", bookingControllers.createBookings);
 /** GET /api/bookings/user */
 // router.get("/bookings/user", bookingControllers.getAllFacility);
 // /** DELETE /api/bookings/:id */
