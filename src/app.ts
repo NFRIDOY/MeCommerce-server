@@ -15,7 +15,8 @@ const corsOptions: cors.CorsOptions = {
     // origin: "http://localhost:5173", // Allow only this origin // Before Deployment
     origin: [
         "http://localhost:5173",
-        "https://sports-facility-booking-platform-phi.vercel.app",
+        "http://localhost:3000",
+        "https://recipi-iota.vercel.app/",
     ], // Allow only this origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
