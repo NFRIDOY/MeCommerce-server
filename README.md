@@ -12,17 +12,18 @@
   - [Introduction](#introduction)
   - [Project Description](#project-description)
   - [Features](#features)
+  - [Endpoints](#endpoints)
   - [Technology Stack](#technology-stack)
   - [Installation Guidelines](#installation-guidelines)
 
 
 --- 
 
-# Sports-Facility-Booking-Platform
+# Sports-Facility-Booking-Platform-Server
 
 ## Introduction
 
-This project focuses on the integration of a frontend interface with an existing backend system for a sports facility booking platform. The system allows users to book various sports facilities, manage their bookings, and interact with an intuitive user interface. The backend was initially developed in Assignment 3, and in this phase, we are expanding its functionality by implementing both user and admin dashboards. The goal is to provide a seamless and interactive experience for users and administrators alike, ensuring smooth API communication between the frontend and backend.
+This project focuses on the integration of a Back-end for a sports facility booking platform. The system various APIs for the sports facilitie platform, user, signup, login with jwt token, create bookings, manage their bookings etc. The goal is to provide a seamless and interactive experience for users and administrators in the front-end, ensuring smooth API communication between the frontend and backend.
 
 ## Project Description
 
@@ -34,31 +35,100 @@ The user dashboard will allow users to manage their profiles, view available fac
 
 ## Features
 
-### 1. User Dashboard
-- View available sports facilities.
-- Book a facility for a selected time slot.
-- View, modify, or cancel current bookings.
-- Manage user profile and account settings.
+### 1. **User Registration and Profile Management**
+   - **Sign Up**: 
+     - Register new users securely to access the platform.
+     - Manage user profiles, allowing updates to personal information and account settings.
+   - **Login**: 
+     - Existing users can log in to view and manage their bookings and profile information.
+     - Both users and administrators can access different functionalities based on their roles.
 
-### 2. Admin Dashboard
-- View all available facilities and their schedules.
-- Manage facility bookings and availability.
-- Add, update, or delete sports facilities and their details.
-- View and manage user bookings and accounts.
+### 2. **Sports Facility Management**
+   - **Facility Viewing**:
+     - Users can view all available sports facilities and their schedules in real-time.
+     - Facility details include name, location, hourly price, and availability status.
+   - **Facility Booking**:
+     - Users can book a facility for their preferred time slots.
+     - Users can view, modify, or cancel their current bookings directly through the platform.
+   - **Facility Administration**:
+     - Admins have access to manage facilities, including adding new facilities, updating information, and deleting entries.
+     - Admins can also manage user bookings and view user accounts for oversight.
 
-### 3. Authentication and Authorization
-- User login and registration system.
-- Role-based access control (RBAC) to separate user and admin privileges.
+### 3. **Authentication and Authorization with JWT**
+   - Secure login and registration system using JSON Web Tokens (JWT).
+   - Role-Based Access Control (RBAC) is implemented to differentiate between user and admin privileges, ensuring that sensitive actions like facility management are restricted to authorized admins only.
 
-### 4. API Integration
-- RESTful API communication between frontend and backend for real-time data updates.
-- Error handling and validation on both frontend and backend sides.
+### 4. **API Integrations**
+   - **RESTful API** communication ensures real-time synchronization between the frontend and backend for seamless data updates.
+   - Comprehensive error handling and data validation are applied on both frontend and backend sides to maintain system integrity and provide meaningful feedback to users.
 
-### 5. Responsive Design
-- A responsive and mobile-friendly interface to ensure usability on various devices.
+---
 
-### 6. Notifications
-- Email or in-app notifications for booking confirmations, cancellations, and updates.
+### **API Routes**
+
+## Endpoints
+
+### 1. **Authentication Routes**
+   - **Endpoint**: `/api/auth`
+   - **Router**: `AuthRoutes`
+   - **Description**: Handles user authentication and registration.
+
+   | Method | Endpoint           | Description                   |
+   |--------|--------------------|-------------------------------|
+   | POST   | `/login`           | User login and JWT issuance.  |
+   | POST   | `/signup`        | User registration.            |
+
+### 2. **User Management Routes**
+   - **Endpoint**: `/api/user`
+   - **Router**: `UserRoutes`
+   - **Description**: Manages user profiles and user-specific actions.
+
+   | Method | Endpoint           | Description                   |
+   |--------|--------------------|-------------------------------|
+   | GET    | `/bookings`        | Get all bookings for a user.  |
+
+### 3. **Sports Facility Routes**
+   - **Endpoint**: `/api/facility`
+   - **Router**: `FacilityRoutes`
+   - **Description**: Manages sports facility data including viewing, adding, updating, and deleting facilities.
+
+   | Method | Endpoint             | Description                     |
+   |--------|----------------------|---------------------------------|
+   | GET    | `/`                  | Get a list of all facilities.  |
+   | GET    | `/:id`              | Get details of a specific facility by ID. |
+   | POST   | `/`              | Add a new facility (Admin only).|
+   | PUT    | `/update/:id`       | Update an existing facility (Admin only).|
+   | DELETE | `/delete/:id`       | Delete a facility (Admin only).|
+
+### 4. **Availability Check Routes**
+   - **Endpoint**: `/api/check-availability`
+   - **Router**: `FacilityRoutes`
+   - **Description**: Checks the availability of facilities for a given time slot.
+
+   | Method | Endpoint             | Description                     |
+   |--------|----------------------|---------------------------------|
+   | GET    | `/:id`              | Check availability of a specific facility based on time slot. |
+
+### 5. **Booking Routes**
+   - **Endpoint**: `/api/bookings`
+   - **Router**: `BookingRoutes`
+   - **Description**: Handles booking creation, management, and updates.
+
+   | Method | Endpoint            | Description                     |
+   |--------|---------------------|---------------------------------|
+   | POST   | `/`                 | Create a new booking with user auth.|
+   | POST   | `/create-booking`   | Create a new booking without user auth.|
+   | GET    | `/:id`              | View details of a specific booking by ID.|
+   | PUT    | `/update/:id`       | Update an existing booking.    |
+
+
+
+### **Notes**
+- Ensure that proper authentication headers are provided for secured routes.
+- Admin-only actions require users to have the appropriate role and permissions.
+- Data validation and error handling are applied to provide meaningful feedback for incorrect or invalid requests.
+
+---
 
 ## Technology Stack
 
