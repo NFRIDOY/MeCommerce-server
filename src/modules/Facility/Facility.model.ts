@@ -11,7 +11,7 @@ const facilitySchema = new Schema<IFacility>({
         required: [true, "Description is required"],
     },
     pricePerHour: {
-        type: String,
+        type: Number,
         required: [true, "Price Per Hour is required"],
     },
     location: {
