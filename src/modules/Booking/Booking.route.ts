@@ -6,6 +6,7 @@ const router = express.Router();
 /** User Only */
 /** POST /api/booking 8. Create a Booking (User Only) */
 router.post("/", auth("user"), bookingControllers.createBooking);
+router.post("/create-booking", bookingControllers.createBooking);
 // router.post("/", bookingControllers.createBooking);
 
 // /** DELETE /api/bookings/:id */
