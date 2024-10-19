@@ -1,13 +1,13 @@
 import AppError from "../../errors/AppError";
-import { IFacility } from "./Products.interface";
+import { IProduct } from "./Products.interface";
 import { Facility } from "./Products.model";
 
-const createFacilityIntoDB = async (payload: IFacility) => {
+const createFacilityIntoDB = async (payload: IProduct) => {
     const facility = await Facility.create(payload);
     return facility;
 };
-// const updateFacilityById = async (_id: string, updateObj: Partial<IFacility>) : Promise<IFacility | null> => => { //
-const updateFacilityById = async (_id: string, updateObj: IFacility) => {
+// const updateFacilityById = async (_id: string, updateObj: Partial<IProduct>) : Promise<IProduct | null> => => { //
+const updateFacilityById = async (_id: string, updateObj: IProduct) => {
     const facilityBefore = await Facility.findOneAndUpdate({ _id }, updateObj);
 
     if (!facilityBefore) throw new AppError(500, "Facility update failed");

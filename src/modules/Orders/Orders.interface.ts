@@ -1,5 +1,5 @@
 import { Types } from "mongoose";
-import { IFacility } from "../Products/Products.interface";
+import { IProduct } from "../Products/Products.interface";
 import { IUser } from "../user/user.interface";
 import { Booking_status } from "./Orders.constants";
 
@@ -20,7 +20,7 @@ export interface IBooking {
     startTime: string;
     endTime: string;
     user: Types.ObjectId | IUser;
-    facility: Types.ObjectId | IFacility;
+    facility: Types.ObjectId | IProduct;
     // user: string;
     // facility: string;
     payableAmount: number;
@@ -30,5 +30,5 @@ export interface IBookingRequest {
     date: Date;
     startTime: string;
     endTime: string;
-    facility: Types.ObjectId | IFacility;
+    facility: Types.ObjectId | IProduct;
 }

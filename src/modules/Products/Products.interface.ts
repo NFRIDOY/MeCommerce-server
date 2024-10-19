@@ -1,7 +1,9 @@
-export interface IFacility {
+export interface IProduct {
     name: string;
     description: string;
-    pricePerHour: number;
-    location: string;
+    price: number;
+    stockQuantity: number;
+    category: string;
+    images: string;
     isDeleted?: boolean;
 }

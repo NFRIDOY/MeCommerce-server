@@ -1,7 +1,7 @@
 import { model, Schema } from "mongoose";
-import { IFacility } from "./Products.interface";
+import { IProduct } from "./Products.interface";
 
-const facilitySchema = new Schema<IFacility>({
+const facilitySchema = new Schema<IProduct>({
     name: {
         type: String,
         required: [true, "Name is required"],
@@ -25,4 +25,4 @@ const facilitySchema = new Schema<IFacility>({
     },
 });
 
-export const Facility = model<IFacility>("Facility", facilitySchema);
+export const Facility = model<IProduct>("Facility", facilitySchema);
