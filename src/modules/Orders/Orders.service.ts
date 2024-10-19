@@ -1,9 +1,9 @@
 import AppError from "../../errors/AppError";
 import { payableAmount } from "../../utils/payableAmount";
-import { Facility } from "../Facility/facility.model";
+import { Facility } from "../Products/Products.model";
 import { User } from "../user/user.model";
-import { IBooking, IBookingRequest } from "./Booking.interface";
-import { Booking } from "./Booking.model";
+import { IBooking, IBookingRequest } from "./Orders.interface";
+import { Booking } from "./Orders.model";
 
 const createBookingIntoDB = async (payload : IBookingRequest, user: string) => {
     const facilityId = await payload.facility

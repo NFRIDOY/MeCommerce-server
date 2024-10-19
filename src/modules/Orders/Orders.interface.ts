@@ -1,7 +1,7 @@
 import { Types } from "mongoose";
-import { IFacility } from "../Facility/facility.interface";
+import { IFacility } from "../Products/Products.interface";
 import { IUser } from "../user/user.interface";
-import { Booking_status } from "./Booking.constants";
+import { Booking_status } from "./Orders.constants";
 
 /**
  * 

@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
 import { catchAsync } from "../../utils/catchAsync";
-import { BookingServices } from "./Booking.service";
+import { BookingServices } from "./Orders.service";
 import { authGetUser } from "../auth/authGetUser.util";
 
 const createBooking: RequestHandler = catchAsync(async (req, res) => {

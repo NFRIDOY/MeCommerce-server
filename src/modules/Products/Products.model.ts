@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import { IFacility } from "./facility.interface";
+import { IFacility } from "./Products.interface";
 
 const facilitySchema = new Schema<IFacility>({
     name: {

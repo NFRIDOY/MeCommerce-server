@@ -1,5 +1,5 @@
 import express from "express";
-import { bookingControllers } from "./Booking.controller";
+import { bookingControllers } from "./Orders.controller";
 import { auth } from "../../middlewares/auth";
 
 const router = express.Router();

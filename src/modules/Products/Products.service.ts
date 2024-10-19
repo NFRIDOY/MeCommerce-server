@@ -1,6 +1,6 @@
 import AppError from "../../errors/AppError";
-import { IFacility } from "./facility.interface";
-import { Facility } from "./facility.model";
+import { IFacility } from "./Products.interface";
+import { Facility } from "./Products.model";
 
 const createFacilityIntoDB = async (payload: IFacility) => {
     const facility = await Facility.create(payload);

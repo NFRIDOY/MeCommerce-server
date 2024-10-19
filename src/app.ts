@@ -3,7 +3,7 @@ import cors from "cors";
 import { globalErrorHandler, notFound } from "./middlewares";
 import { AuthRoutes } from "./modules/auth/auth.route";
 import { UserRoutes } from "./modules/user/user.route";
-import { FacilityRouters } from "./modules/Facility/facility.route";
+import { FacilityRouters } from "./modules/Products/Products.route";
 import cookieParser from "cookie-parser";
 import { BookingRouters } from "./modules/Booking/Booking.route";
 const app = express();

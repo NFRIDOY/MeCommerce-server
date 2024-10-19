@@ -1,5 +1,5 @@
 import { RequestHandler } from "express";
-import { FacilityServices } from "./facility.service";
+import { FacilityServices } from "./Products.service";
 import { catchAsync } from "../../utils/catchAsync";
 
 const createFacility: RequestHandler = catchAsync(async (req, res) => {

@@ -1,6 +1,6 @@
 import { model, Schema } from "mongoose";
-import { IBooking } from "./Booking.interface";
-import { Booking_status } from "./Booking.constants";
+import { IBooking } from "./Orders.interface";
+import { Booking_status } from "./Orders.constants";
 
 const bookingSchema = new Schema<IBooking>({
     date: {
