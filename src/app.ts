@@ -3,9 +3,8 @@ import cors from "cors";
 import { globalErrorHandler, notFound } from "./middlewares";
 import { AuthRoutes } from "./modules/auth/auth.route";
 import { UserRoutes } from "./modules/user/user.route";
-import { FacilityRouters } from "./modules/Products/Products.route";
 import cookieParser from "cookie-parser";
-import { BookingRouters } from "./modules/Booking/Booking.route";
+import { ProductsRouters } from "./modules/Products/Products.route";
 const app = express();
 const rootLink = `http://localhost:5000`;
 // const rootLink = `https://sports-facility-booking-platform-server-ten.vercel.app`;
@@ -15,8 +14,7 @@ const corsOptions: cors.CorsOptions = {
     // origin: "http://localhost:5173", // Allow only this origin // Before Deployment
     origin: [
         "http://localhost:5173",
-        "http://localhost:3000",
-        "https://recipi-iota.vercel.app/",
+        "http://localhost:3000", 
     ], // Allow only this origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
@@ -33,9 +31,7 @@ app.use(cookieParser());
 /** Routers */
 app.use("/api/auth", AuthRoutes);
 app.use("/api/user", UserRoutes);
-app.use("/api/facility", FacilityRouters);
-app.use("/api/check-availability", FacilityRouters);
-app.use("/api/bookings", BookingRouters);
+app.use("/api/products", ProductsRouters);
 
 /** Root Routers */
 app.get("/", (req: Request, res: Response) => {

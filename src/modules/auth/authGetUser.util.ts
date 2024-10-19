@@ -1,6 +1,6 @@
 import jwt, { JwtPayload } from "jsonwebtoken";
 import config from "../../config";
-// import { IBookingRequest } from "../Booking/Booking.interface";
+// import { IOrderRequest } from "../Booking/Booking.interface";
 
 export const authGetUser = (accessToken: string) => {
     const verfiedToken = jwt.verify(
@@ -14,7 +14,7 @@ export const authGetUser = (accessToken: string) => {
     return user;
 };
 
-// export const authGetUserByToken = (object: IBookingRequest) => {
+// export const authGetUserByToken = (object: IOrderRequest) => {
 
 // }
 

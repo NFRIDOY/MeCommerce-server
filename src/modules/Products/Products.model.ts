@@ -10,13 +10,21 @@ const facilitySchema = new Schema<IProduct>({
         type: String,
         required: [true, "Description is required"],
     },
-    pricePerHour: {
+    price: {
         type: Number,
         required: [true, "Price Per Hour is required"],
     },
-    location: {
+    category: {
         type: String,
         required: [true, "Location is required"],
+    },
+    images: {
+        type: String,
+        required: [true, "Location is required"],
+    },
+    stockQuantity: {
+        type: Number,
+        required: [true, "Quantity is required"],
     },
     isDeleted: {
         type: Boolean,

@@ -28,4 +28,4 @@ router.get("/", facilityControllers.getFacilitys);
  */
 // router.get("/check-availability", facilityControllers.checkAvailabilityByDateQuery);
 
-export const FacilityRouters = router;
+export const ProductsRouters = router;

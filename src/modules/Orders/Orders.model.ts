@@ -1,8 +1,8 @@
 import { model, Schema } from "mongoose";
-import { IBooking } from "./Orders.interface";
+import { IOrder } from "./Orders.interface";
 import { Booking_status } from "./Orders.constants";
 
-const bookingSchema = new Schema<IBooking>({
+const bookingSchema = new Schema<IOrder>({
     date: {
         type: Date,
         required: [true, "Date is required"],
@@ -48,4 +48,4 @@ const bookingSchema = new Schema<IBooking>({
 //     next();
 // });
 
-export const Booking = model<IBooking>("Booking", bookingSchema);
+export const Booking = model<IOrder>("Booking", bookingSchema);
