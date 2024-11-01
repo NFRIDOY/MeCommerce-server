@@ -5,6 +5,7 @@ const categorySchema = new Schema<TCategory>({
     name: {
         type: String,
         required: [true, "Name is required"],
+        unique: true,
     },
     description: {
         type: String,
@@ -13,6 +14,7 @@ const categorySchema = new Schema<TCategory>({
     images: {
         type: String,
         required: [true, "Location is required"],
+        unique: true,
     },
     isAvailable: {
         type: Boolean,
