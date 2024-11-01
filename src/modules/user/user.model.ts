@@ -1,11 +1,11 @@
 import { model, Schema } from "mongoose";
-import { IUser } from "./user.interface";
+import { TUser } from "./user.interface";
 import { USER_Role } from "./user.constants";
 // import bcryptjs from "bcryptjs";
 import config from "../../config";
 import bcryptjs from "bcryptjs";
 
-const userSchema = new Schema<IUser>({
+const userSchema = new Schema<TUser>({
     name: {
         type: String,
         required: [true, "Name is required"],
@@ -51,4 +51,4 @@ userSchema.post("save", function (doc, next) {
     next();
 });
 
-export const User = model<IUser>("User", userSchema);
+export const User = model<TUser>("User", userSchema);

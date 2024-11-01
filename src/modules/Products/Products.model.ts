@@ -1,7 +1,7 @@
 import { model, Schema } from "mongoose";
-import { IProduct } from "./Products.interface";
+import { TProduct } from "./Products.interface";
 
-const facilitySchema = new Schema<IProduct>({
+const productSchema = new Schema<TProduct>({
     name: {
         type: String,
         required: [true, "Name is required"],
@@ -15,8 +15,8 @@ const facilitySchema = new Schema<IProduct>({
         required: [true, "Price Per Hour is required"],
     },
     category: {
-        type: String,
-        required: [true, "Location is required"],
+        type: Schema.Types.ObjectId,
+        ref: "Category",
     },
     images: {
         type: String,
@@ -29,8 +29,8 @@ const facilitySchema = new Schema<IProduct>({
     isDeleted: {
         type: Boolean,
         default: false,
-        select: true
+        select: true,
     },
 });
 
-export const Facility = model<IProduct>("Facility", facilitySchema);
+export const Facility = model<TProduct>("Facility", productSchema);

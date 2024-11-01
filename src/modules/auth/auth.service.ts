@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { isPasswordMatched } from "./auth.util";
-import { IUser } from "../user/user.interface";
+import { TUser } from "../user/user.interface";
 import { User } from "../user/user.model";
 import { TLoginUser } from "./auth.interface";
 import config from "../../config";
 import jwt from "jsonwebtoken";
 import AppError from "../../errors/AppError";
 
-const register = async (payload: IUser): Promise<any> => {
+const register = async (payload: TUser): Promise<any> => {
     //user existence check
     const user = await User.findOne({ email: payload.email });
 

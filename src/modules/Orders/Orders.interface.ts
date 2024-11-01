@@ -1,14 +1,14 @@
 import { Types } from "mongoose";
-import { IProduct } from "../Products/Products.interface";
-import { IUser } from "../user/user.interface";
+import { TProduct } from "../Products/Products.interface";
+import { TUser } from "../user/user.interface";
 import { Booking_status } from "./Orders.constants";
 
 export interface IOrder {
     date: Date;
     startTime: string;
     endTime: string;
-    user: Types.ObjectId | IUser;
-    facility: Types.ObjectId | IProduct;
+    user: Types.ObjectId | TUser;
+    facility: Types.ObjectId | TProduct;
     // user: string;
     // facility: string;
     payableAmount: number;
@@ -18,5 +18,5 @@ export interface IOrderRequest {
     date: Date;
     startTime: string;
     endTime: string;
-    facility: Types.ObjectId | IProduct;
+    facility: Types.ObjectId | TProduct;
 }
