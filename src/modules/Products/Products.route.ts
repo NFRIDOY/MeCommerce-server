@@ -4,12 +4,12 @@ import { auth } from "../../middlewares/auth";
 
 const router = express.Router();
 //** Admin Only */
-/** POST /facility */
+/** POST /product */
 router.post("/", auth("admin"), productsControllers.createProduct);
 // router.post("/", productsControllers.createProduct);
-/** PUT /api/facility/:id */
+/** PUT /api/product/:id */
 router.put("/:id", auth("admin"), productsControllers.updateProductById);
-/** Soft DELETE /api/facility/:id */
+/** Soft DELETE /api/product/:id */
 router.delete("/:id", auth("admin"), productsControllers.deleteProductById);
 
 //*** everyone */
@@ -19,7 +19,7 @@ router.get(
     // auth("admin", "user"),
     productsControllers.getProductById
 );
-/** GET All /api/facility */
+/** GET All /api/product */
 router.get("/", productsControllers.getProducts);
 /** GET Check Availability /api/check-availability */
 /**
