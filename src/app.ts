@@ -41,7 +41,7 @@ app.get("/api", (req: Request, res: Response) => {
     res.send(`Welcome To MeCommerce Server API Documentation <br />
         * Available APIs * <br />
         [GET] => ${rootLink}/api/users  <br />
-        [GET] => ${rootLink}/api/facility  <br />
+        [GET] => ${rootLink}/api/products  <br />
         `);
 });
 app.get("/vercel", (req: Request, res: Response) => {
