@@ -22,7 +22,13 @@ User Detail Page: View and modify user details.
 router.get("/", auth(USER_Role.admin), userControllers.getUsers);
 
 /** getUser By ID GET */
-router.get("/:id", auth("user", "admin"), userControllers.getUserById);
+router.get("/:id", auth(USER_Role.user, USER_Role.admin), userControllers.getUserById);
+
+/** getUser By ID GET */
+router.put("/:id", auth(USER_Role.user, USER_Role.admin), userControllers.getUserById);
+
+/** create user by admin */
+router.post("/", auth(USER_Role.admin), userControllers.createUser);
 
 //! Testing
 // router.get("/", userControllers.getUsers);
