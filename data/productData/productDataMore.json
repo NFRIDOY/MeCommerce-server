@@ -1,0 +1,146 @@
+[
+    
+    {
+        "name": "Smartphone X100",
+        "description": "The latest smartphone with a stunning display and powerful performance.",
+        "price": 799.99,
+        "stockQuantity": 50,
+        "category": "672560820c5225d47e749508", 
+        "images": "https://example.com/images/smartphone-x100.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "4K Ultra HD TV",
+        "description": "Experience breathtaking picture quality with this 4K Ultra HD television.",
+        "price": 1099.99,
+        "stockQuantity": 25,
+        "category": "672560820c5225d47e749508", 
+        "images": "https://example.com/images/4k-tv.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "Wireless Earbuds",
+        "description": "Compact and powerful wireless earbuds with noise cancellation.",
+        "price": 199.99,
+        "stockQuantity": 100,
+        "category": "672560820c5225d47e749508", 
+        "images": "https://example.com/images/wireless-earbuds.jpg",
+        "isDeleted": false
+    },
+
+    
+    {
+        "name": "Men's Leather Jacket",
+        "description": "Stylish and durable leather jacket perfect for all seasons.",
+        "price": 199.99,
+        "stockQuantity": 30,
+        "category": "605c72efb8c37f3e88b8f124", 
+        "images": "https://example.com/images/mens-leather-jacket.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "Women's Summer Dress",
+        "description": "Lightweight and comfortable summer dress with floral prints.",
+        "price": 49.99,
+        "stockQuantity": 40,
+        "category": "605c72efb8c37f3e88b8f124", 
+        "images": "https://example.com/images/summer-dress.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "Stylish Sunglasses",
+        "description": "Trendy sunglasses that provide UV protection and style.",
+        "price": 29.99,
+        "stockQuantity": 60,
+        "category": "605c72efb8c37f3e88b8f124", 
+        "images": "https://example.com/images/sunglasses.jpg",
+        "isDeleted": false
+    },
+
+    
+    {
+        "name": "Stainless Steel Cookware Set",
+        "description": "High-quality stainless steel cookware set for all your cooking needs.",
+        "price": 129.99,
+        "stockQuantity": 20,
+        "category": "605c72efb8c37f3e88b8f125", 
+        "images": "https://example.com/images/cookware-set.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "Luxury Bed Sheet Set",
+        "description": "Soft and breathable bed sheets for a comfortable night's sleep.",
+        "price": 79.99,
+        "stockQuantity": 35,
+        "category": "605c72efb8c37f3e88b8f125", 
+        "images": "https://example.com/images/bed-sheet-set.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "Electric Coffee Maker",
+        "description": "Brew your favorite coffee with this easy-to-use electric coffee maker.",
+        "price": 59.99,
+        "stockQuantity": 50,
+        "category": "605c72efb8c37f3e88b8f125", 
+        "images": "https://example.com/images/coffee-maker.jpg",
+        "isDeleted": false
+    },
+
+    
+    {
+        "name": "Moisturizing Facial Cream",
+        "description": "A lightweight, hydrating facial cream for all skin types.",
+        "price": 29.99,
+        "stockQuantity": 100,
+        "category": "605c72efb8c37f3e88b8f126", 
+        "images": "https://example.com/images/facial-cream.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "Revitalizing Hair Shampoo",
+        "description": "A nourishing shampoo that revitalizes and strengthens hair.",
+        "price": 19.99,
+        "stockQuantity": 80,
+        "category": "605c72efb8c37f3e88b8f126", 
+        "images": "https://example.com/images/hair-shampoo.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "Organic Lip Balm",
+        "description": "Natural lip balm that hydrates and protects lips.",
+        "price": 9.99,
+        "stockQuantity": 200,
+        "category": "605c72efb8c37f3e88b8f126", 
+        "images": "https://example.com/images/lip-balm.jpg",
+        "isDeleted": false
+    },
+
+    
+    {
+        "name": "Running Shoes",
+        "description": "Comfortable running shoes designed for performance and support.",
+        "price": 89.99,
+        "stockQuantity": 40,
+        "category": "605c72efb8c37f3e88b8f127", 
+        "images": "https://example.com/images/running-shoes.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "Yoga Mat",
+        "description": "Non-slip yoga mat for a comfortable workout experience.",
+        "price": 29.99,
+        "stockQuantity": 70,
+        "category": "605c72efb8c37f3e88b8f127", 
+        "images": "https://example.com/images/yoga-mat.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "Camping Tent",
+        "description": "Durable and waterproof camping tent for outdoor adventures.",
+        "price": 199.99,
+        "stockQuantity": 15,
+        "category": "605c72efb8c37f3e88b8f127", 
+        "images": "https://example.com/images/camping-tent.jpg",
+        "isDeleted": false
+    }
+]

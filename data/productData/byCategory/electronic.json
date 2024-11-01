@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Smartphone X100",
+        "description": "The latest smartphone with a stunning display and powerful performance.",
+        "price": 799.99,
+        "stockQuantity": 50,
+        "category": "672560820c5225d47e749508",
+        "images": "https://opsg-img-cdn-gl.heytapimg.com/epb/202406/26/IzcVfAu2kdJjoeYS.png",
+        "isDeleted": false
+    },
+    {
+        "name": "4K Ultra HD TV",
+        "description": "Experience breathtaking picture quality with this 4K Ultra HD television.",
+        "price": 1099.99,
+        "stockQuantity": 25,
+        "category": "672560820c5225d47e749508",
+        "images": "https://example.com/images/4k-tv.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "Wireless Earbuds",
+        "description": "Compact and powerful wireless earbuds with noise cancellation.",
+        "price": 199.99,
+        "stockQuantity": 100,
+        "category": "672560820c5225d47e749508",
+        "images": "https://example.com/images/wireless-earbuds.jpg",
+        "isDeleted": false
+    }
+]
