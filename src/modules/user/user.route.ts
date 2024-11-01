@@ -24,10 +24,10 @@ router.get("/", auth(USER_Role.admin), userControllers.getUsers);
 /** getUser By ID GET */
 router.get("/:id", auth(USER_Role.user, USER_Role.admin), userControllers.getUserById);
 
-/** getUser By ID GET */
-router.put("/:id", auth(USER_Role.user, USER_Role.admin), userControllers.getUserById);
+/** updateUserById by admin PUT */
+router.put("/", auth(USER_Role.user, USER_Role.admin), userControllers.updateUserById);
 
-/** create user by admin */
+/** create user by admin POST */
 router.post("/", auth(USER_Role.admin), userControllers.createUser);
 
 //! Testing
