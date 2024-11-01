@@ -35,10 +35,10 @@ app.use("/api/products", ProductsRouters);
 
 /** Root Routers */
 app.get("/", (req: Request, res: Response) => {
-    res.send("Sports Facility Booking Platfrom Server is Running");
+    res.send("MeCommerce Server is Running");
 });
 app.get("/api", (req: Request, res: Response) => {
-    res.send(`Welcome To Sports Facility Booking Platfrom Server API Documentation <br />
+    res.send(`Welcome To MeCommerce Server API Documentation <br />
         * Available APIs * <br />
         [GET] => ${rootLink}/api/users  <br />
         [GET] => ${rootLink}/api/facility  <br />
@@ -49,13 +49,13 @@ app.get("/vercel", (req: Request, res: Response) => {
         // eslint-disable-next-line no-console
         console.log("This project is running on Vercel!");
         res.send(
-            "Sports Facility Booking Platfrom Server is Running on Vercel!"
+            "MeCommerce Server is Running on Vercel!"
         );
     } else {
         // eslint-disable-next-line no-console
         console.log("This project is not running on Vercel.");
         res.send(
-            "Sports Facility Booking Platfrom Server is not Running on Vercel!"
+            "MeCommerce Server is not Running on Vercel! Running on localhost"
         );
     }
 });
