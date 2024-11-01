@@ -1,40 +1,40 @@
 import AppError from "../../errors/AppError";
 import { TProduct } from "./Products.interface";
-import { Facility } from "./Products.model";
+import { Product } from "./Products.model";
 
-const createFacilityIntoDB = async (payload: TProduct) => {
-    const facility = await Facility.create(payload);
-    return facility;
+const createProductIntoDB = async (payload: TProduct) => {
+    const product = await Product.create(payload);
+    return product;
 };
-// const updateFacilityById = async (_id: string, updateObj: Partial<TProduct>) : Promise<TProduct | null> => => { //
-const updateFacilityById = async (_id: string, updateObj: TProduct) => {
-    const facilityBefore = await Facility.findOneAndUpdate({ _id }, updateObj);
+// const updateProductById = async (_id: string, updateObj: Partial<TProduct>) : Promise<TProduct | null> => => { //
+const updateProductById = async (_id: string, updateObj: TProduct) => {
+    const productBefore = await Product.findOneAndUpdate({ _id }, updateObj);
 
-    if (!facilityBefore) throw new AppError(500, "Facility update failed");
+    if (!productBefore) throw new AppError(500, "Product update failed");
 
-    const facility = await Facility.findOne({ _id });
+    const product = await Product.findOne({ _id });
 
-    return facility;
+    return product;
 };
-const deleteSoftFacilityById = async (_id: string) => {
-    const facility = await Facility.findOneAndUpdate(
+const deleteSoftProductById = async (_id: string) => {
+    const product = await Product.findOneAndUpdate(
         { _id },
         { isDeleted: true }
     );
-    return facility;
+    return product;
 };
-const getFacilityByIdFromDB = async (_id: string) => {
-    const facility = await Facility.findOne({ _id });
-    return facility;
+const getProductByIdFromDB = async (_id: string) => {
+    const product = await Product.findOne({ _id });
+    return product;
 };
-const getFacilitysFromDB = async () => {
-    const facility = await Facility.find();
-    return facility;
+const getProductsFromDB = async () => {
+    const product = await Product.find();
+    return product;
 };
-export const FacilityServices = {
-    createFacilityIntoDB,
-    updateFacilityById,
-    deleteSoftFacilityById,
-    getFacilityByIdFromDB,
-    getFacilitysFromDB,
+export const ProductServices = {
+    createProductIntoDB,
+    updateProductById,
+    deleteSoftProductById,
+    getProductByIdFromDB,
+    getProductsFromDB,
 };

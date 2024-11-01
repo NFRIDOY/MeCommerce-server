@@ -1,31 +1,31 @@
 import express from "express";
-import { facilityControllers } from "./Products.controller";
+import { productsControllers } from "./Products.controller";
 import { auth } from "../../middlewares/auth";
 
 const router = express.Router();
 //** Admin Only */
 /** POST /facility */
-router.post("/", auth("admin"), facilityControllers.createFacility);
-// router.post("/", facilityControllers.createFacility);
+router.post("/", auth("admin"), productsControllers.createProduct);
+// router.post("/", productsControllers.createProduct);
 /** PUT /api/facility/:id */
-router.put("/:id", auth("admin"), facilityControllers.updateFacilityById);
+router.put("/:id", auth("admin"), productsControllers.updateProductById);
 /** Soft DELETE /api/facility/:id */
-router.delete("/:id", auth("admin"), facilityControllers.deleteFacilityById);
+router.delete("/:id", auth("admin"), productsControllers.deleteProductById);
 
-//*** Any One */
-/** GET A Facility By ID */
+//*** everyone */
+/** GET A Product By ID */
 router.get(
     "/:id",
     // auth("admin", "user"),
-    facilityControllers.getFacilityById
+    productsControllers.getProductById
 );
 /** GET All /api/facility */
-router.get("/", facilityControllers.getFacilitys);
+router.get("/", productsControllers.getProducts);
 /** GET Check Availability /api/check-availability */
 /**
  * Example
  * GET /api/check-availability?date=2024-06-15
  */
-// router.get("/check-availability", facilityControllers.checkAvailabilityByDateQuery);
+// router.get("/check-availability", productsControllers.checkAvailabilityByDateQuery);
 
 export const ProductsRouters = router;
