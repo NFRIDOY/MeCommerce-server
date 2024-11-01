@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Smartphone X100",
+        "description": "The latest smartphone with a stunning display and powerful performance.",
+        "price": 799.99,
+        "stockQuantity": 50,
+        "category": "605c72efb8c37f3e88b8f123", 
+        "images": "https://example.com/images/smartphone-x100.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "Men's Leather Jacket",
+        "description": "Stylish and durable leather jacket perfect for all seasons.",
+        "price": 199.99,
+        "stockQuantity": 30,
+        "category": "605c72efb8c37f3e88b8f124", 
+        "images": "https://example.com/images/mens-leather-jacket.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "Stainless Steel Cookware Set",
+        "description": "High-quality stainless steel cookware set for all your cooking needs.",
+        "price": 129.99,
+        "stockQuantity": 20,
+        "category": "605c72efb8c37f3e88b8f125", 
+        "images": "https://example.com/images/cookware-set.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "Moisturizing Facial Cream",
+        "description": "A lightweight, hydrating facial cream for all skin types.",
+        "price": 29.99,
+        "stockQuantity": 100,
+        "category": "605c72efb8c37f3e88b8f126", 
+        "images": "https://example.com/images/facial-cream.jpg",
+        "isDeleted": false
+    },
+    {
+        "name": "Running Shoes",
+        "description": "Comfortable running shoes designed for performance and support.",
+        "price": 89.99,
+        "stockQuantity": 40,
+        "category": "605c72efb8c37f3e88b8f127", 
+        "images": "https://example.com/images/running-shoes.jpg",
+        "isDeleted": false
+    }
+]

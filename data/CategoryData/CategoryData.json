@@ -1,8 +1,37 @@
 [
     {
-        "_id": { "$oid": "66c8e1ce7d2825cdb9b5b1e4" },
-        "image": "https://t3.ftcdn.net/jpg/04/90/39/58/360_F_490395808_MLzc6oHe4WzgZ3vPcqnCNj0NlzAerQrP.jpg",
-        "title": "Cycus",
-        "__v": { "$numberInt": "0" }
+        "name": "Electronics",
+        "description": "Latest gadgets, devices, and accessories including smartphones, laptops, and home appliances.",
+        "images": "https://example.com/images/electronics.jpg",
+        "isAvailable": true,
+        "isDeleted": false
+    },
+    {
+        "name": "Fashion",
+        "description": "Trendy clothing, shoes, and accessories for men, women, and children.",
+        "images": "https://example.com/images/fashion.jpg",
+        "isAvailable": true,
+        "isDeleted": false
+    },
+    {
+        "name": "Home & Kitchen",
+        "description": "A wide range of products for home improvement, kitchenware, and decor.",
+        "images": "https://example.com/images/home-kitchen.jpg",
+        "isAvailable": true,
+        "isDeleted": false
+    },
+    {
+        "name": "Beauty & Personal Care",
+        "description": "Skincare, makeup, haircare, and wellness products to enhance your beauty routine.",
+        "images": "https://example.com/images/beauty-personal-care.jpg",
+        "isAvailable": true,
+        "isDeleted": false
+    },
+    {
+        "name": "Sports & Outdoors",
+        "description": "Equipment and gear for sports, fitness, and outdoor activities.",
+        "images": "https://example.com/images/sports-outdoors.jpg",
+        "isAvailable": true,
+        "isDeleted": false
     }
 ]

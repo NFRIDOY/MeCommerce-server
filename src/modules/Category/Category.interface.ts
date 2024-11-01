@@ -1,11 +1,3 @@
-/**
-Product Name
-Description
-Price
-Stock Quantity
-Category
-Product Images
- */
 export interface TCategory {
     name: string;
     description: string;
