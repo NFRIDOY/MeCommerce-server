@@ -1,14 +1,12 @@
-
 <div align="center">
-  <h1>About The Project
+  <h1>About The Project</h1>
   <div style="color: #808080">
-  Recipi: Recipe Sharing Community - Server
-  </div></h1>
-  <h5><a href="">
-  Live</a> </h5>
+    MeCommerce - Server
+  </div>
+  <h5><a href="">Live</a></h5>
 </div>
 
-# Recipe Sharing Community - Backend
+# MeCommerce - Backend
 
 ## Table of Contents
   - [Introduction](#introduction)
@@ -18,48 +16,49 @@
   - [Technology Stack](#technology-stack)
   - [Installation Guidelines](#installation-guidelines)
 
-
---- 
+---
 
 ## Introduction
 
-This project focuses on developing the backend for the Recipe Sharing Community platform. The system provides various APIs for user registration, authentication, recipe management, and more, allowing users to share, view, and manage recipes. The goal is to create a robust and efficient backend that integrates seamlessly with the frontend, ensuring smooth communication and data flow.
+This project focuses on developing the backend for **MeCommerce**, an e-commerce platform that provides APIs for user registration, authentication, product management, and more. The aim is to build a secure, efficient, and scalable backend that seamlessly integrates with the frontend to deliver an optimal shopping experience.
 
 ## Project Description
 
-The Recipe Sharing Community platform allows users to share their culinary creations, discover new recipes, and interact with other food enthusiasts. Users can create an account, login, browse through recipes, and manage their submissions. Administrators can manage user accounts, moderate recipes, and oversee platform activities.
+**MeCommerce** is an online e-commerce website where users can create accounts, log in, browse through a wide variety of products, add items to their cart, and complete purchases. The backend handles user management, product catalog, order processing, and authentication to ensure smooth and secure transactions.
 
 ## Features
 
 ### 1. **User Registration and Profile Management**
    - **Sign Up**: 
-     - Register new users securely to access the platform.
-     - Manage user profiles, allowing updates to personal information and account settings.
+     - Secure user registration to access the platform.
+     - Manage user profiles with options to update personal information and settings.
    - **Login**: 
-     - Existing users can log in to view and manage their profile information.
-     - Both users and administrators can access different functionalities based on their roles.
+     - Existing users can log in to manage their accounts.
+     - Role-based functionalities for both users and administrators.
 
-### 2. **Recipe Management**
-   - **Recipe Viewing**:
-     - Users can view all available recipes with detailed information such as ingredients, steps, and cooking time.
-     - Recipes can be filtered by category, cuisine, or user preferences.
-   - **Recipe Creation**:
-     - Users can add new recipes, including images, ingredients, and cooking instructions.
-     - Users can update or delete their own recipes.
-   - **Recipe Administration**:
-     - Admins have access to manage recipes, including approving or rejecting submitted recipes and moderating content.
+### 2. **Product Management**
+   - **Product Viewing**:
+     - Users can view available products with detailed information such as price, description, and images.
+     - Products can be filtered by categories or searched using keywords.
+   - **Product Administration**:
+     - Admins can add, update, or delete products and manage the product catalog.
 
-### 3. **Authentication and Authorization with JWT**
-   - Secure login and registration system using JSON Web Tokens (JWT).
-   - Role-Based Access Control (RBAC) differentiates between user and admin privileges, ensuring that sensitive actions like recipe moderation are restricted to authorized admins only.
+### 3. **Shopping Cart and Checkout**
+   - **Cart Operations**:
+     - Users can add products to their cart, update quantities, or remove items.
+     - The backend handles price calculations and manages cart data.
+   - **Checkout Process**:
+     - Secure and streamlined checkout, including payment and order summary.
 
-### 4. **API Integrations**
-   - **RESTful API** communication ensures real-time synchronization between the frontend and backend for seamless data updates.
-   - Comprehensive error handling and data validation are applied on both frontend and backend sides to maintain system integrity and provide meaningful feedback to users.
+### 4. **Authentication and Authorization with JWT**
+   - Secure login and registration using JSON Web Tokens (JWT).
+   - Role-Based Access Control (RBAC) to differentiate between regular users and administrators, ensuring only authorized users can perform restricted actions.
+
+### 5. **API Integrations**
+   - **RESTful API** communication for real-time data exchange between frontend and backend.
+   - Comprehensive error handling and validation to maintain system integrity and provide meaningful feedback.
 
 ---
-
-## **API Routes**
 
 ## Endpoints
 
@@ -68,135 +67,80 @@ The Recipe Sharing Community platform allows users to share their culinary creat
    - **Router**: `AuthRoutes`
    - **Description**: Handles user authentication and registration.
 
-   | Method | Endpoint           | Description                   |
-   |--------|--------------------|-------------------------------|
-   | POST   | `/login`           | User login and JWT issuance.  |
-   | POST   | `/signup`          | User registration.            |
+   | Method | Endpoint | Description                 |
+   |--------|----------|-----------------------------|
+   | POST   | `/login` | User login and JWT issuance |
+   | POST   | `/signup` | User registration           |
 
 ### 2. **User Management Routes**
    - **Endpoint**: `/api/user`
    - **Router**: `UserRoutes`
    - **Description**: Manages user profiles and user-specific actions.
 
-   | Method | Endpoint           | Description                   |
-   |--------|--------------------|-------------------------------|
-   | GET    | `/profile`         | Get profile information for a user.  |
-   | PUT    | `/profile`         | Update user profile.          |
+   | Method | Endpoint   | Description                       |
+   |--------|------------|-----------------------------------|
+   | GET    | `/profile` | Retrieve user profile information |
+   | PUT    | `/profile` | Update user profile information   |
 
-### 3. **Recipe Routes**
-   - **Endpoint**: `/api/recipe`
-   - **Router**: `RecipeRoutes`
-   - **Description**: Manages recipe data including viewing, adding, updating, and deleting recipes.
+### 3. **Product Routes**
+   - **Endpoint**: `/api/product`
+   - **Router**: `ProductRoutes`
+   - **Description**: Manages product data, including viewing, adding, updating, and deleting products.
 
-   | Method | Endpoint             | Description                     |
-   |--------|----------------------|---------------------------------|
-   | GET    | `/`                  | Get a list of all recipes.      |
-   | GET    | `/:id`              | Get details of a specific recipe by ID. |
-   | POST   | `/`                 | Add a new recipe (User only).   |
-   | PUT    | `/update/:id`       | Update an existing recipe (User only).|
-   | DELETE | `/delete/:id`       | Delete a recipe (User/Admin).   |
+   | Method | Endpoint       | Description                      |
+   |--------|-----------------|----------------------------------|
+   | GET    | `/`            | Retrieve all products            |
+   | GET    | `/:id`         | Get details of a specific product|
+   | POST   | `/`            | Add a new product (Admin only)   |
+   | PUT    | `/:id`         | Update an existing product (Admin only) |
+   | DELETE | `/:id`         | Delete a product (Admin only)    |
 
-### 4. **Search Routes**
-   - **Endpoint**: `/api/search`
-   - **Router**: `SearchRoutes`
-   - **Description**: Searches recipes based on keywords, categories, or ingredients.
+### 4. **Cart Routes**
+   - **Endpoint**: `/api/cart`
+   - **Router**: `CartRoutes`
+   - **Description**: Handles cart operations such as adding items, updating quantities, and removing items.
 
-   | Method | Endpoint             | Description                     |
-   |--------|----------------------|---------------------------------|
-   | GET    | `/`                 | Search recipes using query parameters. |
-
-### 5. **Admin Routes**
-   - **Endpoint**: `/api/admin`
-   - **Router**: `AdminRoutes`
-   - **Description**: Handles admin functionalities like managing users and moderating content.
-
-   | Method | Endpoint            | Description                     |
-   |--------|---------------------|---------------------------------|
-   | GET    | `/users`           | View all registered users.      |
-   | DELETE | `/user/:id`        | Delete a user account.          |
+   | Method | Endpoint      | Description                      |
+   |--------|---------------|----------------------------------|
+   | GET    | `/`           | Get items in the user's cart     |
+   | POST   | `/add`        | Add a product to the cart        |
+   | PUT    | `/update`     | Update product quantity in the cart |
+   | DELETE | `/remove/:id` | Remove a product from the cart   |
 
 ### **Notes**
-- Ensure that proper authentication headers are provided for secured routes.
-- Admin-only actions require users to have the appropriate role and permissions.
-- Data validation and error handling are applied to provide meaningful feedback for incorrect or invalid requests.
+- Authentication headers are required for protected routes.
+- Admin-only routes require appropriate permissions.
+- Data validation and error handling ensure robust and secure operations.
 
 ---
-
-
-
-
-
-
 
 ## Technology Stack
-- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
-- **Express**: A minimalist web framework for building APIs and web applications.
-- **Mongoose**: An ODM (Object Data Modeling) library for MongoDB and Node.js, used to manage database interactions.
-- **bcryptjs**: A library to hash passwords securely.
-- **jsonwebtoken**: A tool for creating and verifying JSON Web Tokens (JWT), used for authentication.
-- **cors**: A middleware for handling Cross-Origin Resource Sharing (CORS) in APIs.
-- **date-fns**: A modern date utility library for formatting, manipulating, and comparing dates.
-- **slugify**: A library used to create URL-friendly slugs from strings.
-- **zod**: A TypeScript-first schema declaration and validation library.
+- **TypeScript**: A typed superset of JavaScript for safer and more efficient development.
+- **Express**: A web framework for building APIs and web applications.
+- **Mongoose**: An ODM library for MongoDB to manage database interactions.
+- **bcryptjs**: For securely hashing passwords.
+- **jsonwebtoken**: For creating and verifying JWTs for authentication.
+- **cors**: Middleware for handling CORS requests.
+- **slugify**: To generate URL-friendly slugs for product names.
+- **zod**: A schema declaration and validation library for TypeScript.
 
 ### Development Tools
-- **ts-node-dev**: A development tool to use TypeScript in Node.js without compiling, with auto-restart on file changes.
-- **ESLint**: A tool for identifying and fixing issues in JavaScript/TypeScript code.
-- **TypeScript**: Used for type safety and better development experience.
-- **Nodemon**: A utility that automatically restarts the server when code changes are detected during development.
-- **dotenv**: A module to load environment variables from a `.env` file.
-
-### Dev Dependencies
-- **@types/cors**: TypeScript definitions for the `cors` middleware.
-- **@types/express**: TypeScript definitions for Express.
-- **@types/node**: TypeScript definitions for Node.js.
-- **@types/bcryptjs**: TypeScript definitions for bcryptjs.
-- **eslint**: A static code analysis tool for identifying and fixing problematic patterns in code.
-- **typescript-eslint**: ESLint tooling for TypeScript.
-- **@vercel/node**: For building and deploying serverless functions on Vercel.
-- **@vercel/build-utils**: A utility library for building serverless functions for Vercel.
+- **ts-node-dev**: Automatically restarts the server during development on file changes.
+- **ESLint**: Identifies and fixes code quality issues.
+- **Nodemon**: Restarts the server automatically on code changes.
+- **dotenv**: Loads environment variables from a `.env` file.
 
 ---
 
-## Installation Guideline
-
-Follow these steps to set up the Sports Facility Booking Platform on your local machine.
+## Installation Guidelines
 
 ### Prerequisites
-- Ensure you have [Node.js](https://nodejs.org/) installed (version 14 or later).
-- Ensure you have [npm](https://www.npmjs.com/) (comes bundled with Node.js) or [yarn](https://classic.yarnpkg.com/en/docs/install/) installed.
+- [Node.js](https://nodejs.org/) (version 14 or later)
+- [npm](https://www.npmjs.com/) or [yarn](https://classic.yarnpkg.com/en/docs/install/)
 
 ### Steps to Install
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/NFRIDOY/recipi-recipe-sharing-community-server.git
-   cd recipi-recipe-sharing-community-server
-   ```
-2. **Install**
-   ```bash
-   npm install
-   ```
-3. **Run**
-   ```bash
-   npm run start:dev
-   ```
-
-### Configuration
-
-1. Create a `.env` file in the root directory of the project.
-2. Add necessary configuration variables in the `.env` file.
-   Example:
-   ```bash
-    PORT=5000
-    DB_URL=your_db_connection_uri
-    NODE_ENV=development
-    salt_round=789
-    JWT_ACCESS_SECRET=your_JWT_ACCESS_SECRET
-    JWT_ACCESS_EXPIRES_IN=123d
-    JWT_REFRESH_SECRET=your_JWT_REFRESH_SECRET
-    JWT_REFRESH_EXPIRES_IN=365d
-   ```
-
-##### Enjoy 
-
+   git clone https://github.com/NFRIDOY/mecommerce-server.git
+   cd mecommerce-server
