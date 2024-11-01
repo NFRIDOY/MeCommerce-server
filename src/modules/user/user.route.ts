@@ -1,6 +1,7 @@
 import express from "express";
 import { userControllers } from "./user.controller";
 import { auth } from "../../middlewares/auth";
+import { USER_Role } from "./user.constants";
 
 const router = express.Router();
 
@@ -12,12 +13,18 @@ const router = express.Router();
 /** Login User */
 // router.post("/login", userControllers.userAccess);
 
-/** getUser By ID GET */
+/**
+ * User Management:
+User List Page: Display all users with options to create, edit, or delete users.
+User Detail Page: View and modify user details.
+*/
+/**  Users by admin GET */
+router.get("/", auth(USER_Role.admin), userControllers.getUsers);
 
+/** getUser By ID GET */
 router.get("/:id", auth("user", "admin"), userControllers.getUserById);
 
-/** testing User GET */
 //! Testing
-router.get("/", userControllers.getUsers);
+// router.get("/", userControllers.getUsers);
 
 export const UserRoutes = router;
