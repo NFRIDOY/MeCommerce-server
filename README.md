@@ -3,7 +3,7 @@
   <div style="color: #808080">
     MeCommerce - Server
   </div>
-  <h5><a href="">Live</a></h5>
+  <h5><a href="https://mecommerce-server.vercel.app">Live</a></h5>
 </div>
 
 # MeCommerce - Backend

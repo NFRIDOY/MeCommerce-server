@@ -15,6 +15,7 @@ const corsOptions: cors.CorsOptions = {
     origin: [
         "http://localhost:5173",
         "http://localhost:3000", 
+        "https://mecommerce-weld.vercel.app",
     ], // Allow only this origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
