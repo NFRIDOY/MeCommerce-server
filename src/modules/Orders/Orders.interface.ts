@@ -1,9 +1,9 @@
 import { Types } from "mongoose";
 import { TProduct } from "../Products/Products.interface";
 import { TUser } from "../user/user.interface";
-import { Booking_status } from "./Orders.constants";
+import { Order_status } from "./Orders.constants";
 
-export interface IOrder {
+export interface TOrder {
     date: Date;
     startTime: string;
     endTime: string;
@@ -12,9 +12,9 @@ export interface IOrder {
     // user: string;
     // facility: string;
     payableAmount: number;
-    isBooked: keyof typeof Booking_status;
+    isBooked: keyof typeof Order_status;
 }
-export interface IOrderRequest {
+export interface TOrderRequest {
     date: Date;
     startTime: string;
     endTime: string;

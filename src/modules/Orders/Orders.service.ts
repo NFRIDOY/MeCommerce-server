@@ -2,10 +2,10 @@ import AppError from "../../errors/AppError";
 import { payableAmount } from "../../utils/payableAmount";
 import { Facility } from "../Products/Products.model";
 import { User } from "../user/user.model";
-import { IOrder, IOrderRequest } from "./Orders.interface";
+import { TOrder, TOrderRequest } from "./Orders.interface";
 import { Booking } from "./Orders.model";
 
-const createBookingIntoDB = async (payload : IOrderRequest, user: string) => {
+const createBookingIntoDB = async (payload : TOrderRequest, user: string) => {
     const facilityId = await payload.facility
     const facility = await Facility.findOne({_id: facilityId});
 
@@ -13,8 +13,8 @@ const createBookingIntoDB = async (payload : IOrderRequest, user: string) => {
     const booking = await Booking.create({...payload, user, payableAmount: getPayableAmount});
     return booking;
 };
-// const updateBookingById = async (_id: string, updateObj: Partial<IOrder>) : Promise<IOrder | null> => => { //
-const updateBookingById = async (_id: string, updateObj: IOrder) => {
+// const updateBookingById = async (_id: string, updateObj: Partial<TOrder>) : Promise<TOrder | null> => => { //
+const updateBookingById = async (_id: string, updateObj: TOrder) => {
     const bookingBefore = await Booking.findOneAndUpdate({ _id }, updateObj);
 
     if (!bookingBefore) throw new AppError(500, "Booking update failed");

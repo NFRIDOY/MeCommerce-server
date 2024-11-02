@@ -1,8 +1,8 @@
 import { model, Schema } from "mongoose";
-import { IOrder } from "./Orders.interface";
-import { Booking_status } from "./Orders.constants";
+import { TOrder } from "./Orders.interface";
+import { Order_status } from "./Orders.constants";
 
-const bookingSchema = new Schema<IOrder>({
+const bookingSchema = new Schema<TOrder>({
     date: {
         type: Date,
         required: [true, "Date is required"],
@@ -31,8 +31,8 @@ const bookingSchema = new Schema<IOrder>({
     },
     isBooked: {
         type: String,
-        enum: Object.keys(Booking_status),
-        default: Booking_status.confirmed,
+        enum: Object.keys(Order_status),
+        default: Order_status.confirmed,
         // required: [true, "isBooked status is required"],
     },
 });
@@ -48,4 +48,4 @@ const bookingSchema = new Schema<IOrder>({
 //     next();
 // });
 
-export const Booking = model<IOrder>("Booking", bookingSchema);
+export const Booking = model<TOrder>("Booking", bookingSchema);
