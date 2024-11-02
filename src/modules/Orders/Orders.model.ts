@@ -1,6 +1,22 @@
 import { model, Schema } from "mongoose";
 import { TOrder } from "./Orders.interface";
 import { Order_status } from "./Orders.constants";
+import { TProduct } from "../Products/Products.interface";
+import { productSchemaObject } from "../Products/Products.model";
+
+interface TOrderedProduct extends TProduct {
+    quantity: number;
+}
+
+const orderProductSchema = new Schema({
+    ...productSchemaObject,
+    quantity: {
+        type: Number,
+        required: [true, "Quantity is required"]
+    }
+})
+
+export const OrderProduct = model<TOrderedProduct>("OrderedProduct", orderProductSchema);
 
 const bookingSchema = new Schema<TOrder>({
     date: {
@@ -14,7 +30,7 @@ const bookingSchema = new Schema<TOrder>({
     },
     products: [{
         type: Schema.Types.ObjectId,
-        ref: "Product",
+        ref: "OrderProduct",
         required: [true, "Product ID is required"],
     }],
     payableAmount: {
