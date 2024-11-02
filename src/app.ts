@@ -8,7 +8,6 @@ import { ProductsRouters } from "./modules/Products/Products.route";
 import { CategoryRouters } from "./modules/Category/Category.route";
 const app = express();
 const rootLink = `http://localhost:5000`;
-// const rootLink = `https://sports-facility-booking-platform-server-ten.vercel.app`;
 
 // Define CORS options
 const corsOptions: cors.CorsOptions = {

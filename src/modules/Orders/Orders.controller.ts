@@ -64,8 +64,8 @@ const getBookingById: RequestHandler = catchAsync(async (req, res) => {
 const getBookings: RequestHandler = catchAsync(async (req, res) => {
     const accessToken = req.headers.authorization;
     const user = await authGetUser(accessToken as string);
-    const { facility } = req.body;
-    const result = await BookingServices.getBookingsFromDB(user, facility);
+    const { prouduct } = req.body;
+    const result = await BookingServices.getBookingsFromDB(user, prouduct);
 
     res.status(200).json({
         success: true,

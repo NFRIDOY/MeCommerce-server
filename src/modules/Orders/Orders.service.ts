@@ -6,10 +6,10 @@ import { TOrder, TOrderRequest } from "./Orders.interface";
 import { Booking } from "./Orders.model";
 
 const createBookingIntoDB = async (payload : TOrderRequest, user: string) => {
-    const facilityId = await payload.facility
-    const facility = await Facility.findOne({_id: facilityId});
+    const prouductId = await payload.prouduct
+    const prouduct = await Facility.findOne({_id: prouductId});
 
-    const getPayableAmount = await payableAmount(payload.startTime, payload.endTime, facility?.pricePerHour as number);
+    const getPayableAmount = await payableAmount(payload.startTime, payload.endTime, prouduct?.pricePerHour as number);
     const booking = await Booking.create({...payload, user, payableAmount: getPayableAmount});
     return booking;
 };
@@ -34,12 +34,12 @@ const getBookingByIdFromDB = async (_id: string) => {
     const booking = await Booking.findOne({ _id });
     return booking;
 };
-const getBookingsFromDB = async (user: string, facility: string) => {
+const getBookingsFromDB = async (user: string, prouduct: string) => {
     const booking = await Booking.find({ user: user });
-    const bookedFacilityByUser = await Facility.find({ _id: facility });
+    const bookedFacilityByUser = await Facility.find({ _id: prouduct });
     const userDetails = await User.find({ _id: user });
 
-    return { ...booking, facility: bookedFacilityByUser, user: userDetails };
+    return { ...booking, prouduct: bookedFacilityByUser, user: userDetails };
     // return { booking };
 };
 export const BookingServices = {

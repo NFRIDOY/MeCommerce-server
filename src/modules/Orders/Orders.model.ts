@@ -7,24 +7,16 @@ const bookingSchema = new Schema<TOrder>({
         type: Date,
         required: [true, "Date is required"],
     },
-    startTime: {
-        type: String,
-        required: [true, "Start Time is required"],
-    },
-    endTime: {
-        type: String,
-        required: [true, "End Time is required"],
-    },
     user: {
         type: Schema.Types.ObjectId,
         ref: "User",
         required: [true, "User ID is required"],
     },
-    facility: {
+    products: [{
         type: Schema.Types.ObjectId,
-        ref: "Facility",
-        required: [true, "Facility ID is required"],
-    },
+        ref: "Product",
+        required: [true, "Product ID is required"],
+    }],
     payableAmount: {
         type: Number,
         required: [true, "Payable Amount is required"],
