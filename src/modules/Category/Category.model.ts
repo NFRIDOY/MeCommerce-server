@@ -7,10 +7,6 @@ const categorySchema = new Schema<TCategory>({
         required: [true, "Name is required"],
         unique: true,
     },
-    description: {
-        type: String,
-        required: [true, "Description is required"],
-    },
     images: {
         type: String,
         required: [true, "Location is required"],
