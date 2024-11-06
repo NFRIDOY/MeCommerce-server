@@ -1,16 +1,32 @@
 import express from "express";
 import { productsControllers } from "./Products.controller";
-import { auth } from "../../middlewares/auth";
+
 
 const router = express.Router();
 //** Admin Only */
 /** POST /product */
-router.post("/", auth("admin"), productsControllers.createProduct);
+// TODO: ADD AUTH later
+//! Testing 
+router.post(
+    "/",
+    // auth("admin"),
+    productsControllers.createProduct
+);
+
 // router.post("/", productsControllers.createProduct);
 /** PUT /api/product/:id */
-router.put("/:id", auth("admin"), productsControllers.updateProductById);
+router.put(
+    "/:id",
+    // auth("admin"),
+    productsControllers.updateProductById
+);
+
 /** Soft DELETE /api/product/:id */
-router.delete("/:id", auth("admin"), productsControllers.deleteProductById);
+router.delete(
+    "/:id",
+    // auth("admin"),
+    productsControllers.deleteProductById
+);
 
 //*** everyone */
 /** GET A Product By ID */
