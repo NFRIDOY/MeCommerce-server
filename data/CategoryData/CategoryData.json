@@ -9,14 +9,14 @@
     {
         "name": "Fashion",
         "description": "Trendy clothing, shoes, and accessories for men, women, and children.",
-        "images": "https://example.com/images/fashion.jpg",
+        "images": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "isAvailable": true,
         "isDeleted": false
     },
     {
         "name": "Home & Kitchen",
         "description": "A wide range of products for home improvement, kitchenware, and decor.",
-        "images": "https://example.com/images/home-kitchen.jpg",
+        "images": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1916&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "isAvailable": true,
         "isDeleted": false
     },
@@ -30,7 +30,7 @@
     {
         "name": "Sports & Outdoors",
         "description": "Equipment and gear for sports, fitness, and outdoor activities.",
-        "images": "https://example.com/images/sports-outdoors.jpg",
+        "images": "https://images.unsplash.com/photo-1590502160462-58b41354f588?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "isAvailable": true,
         "isDeleted": false
     }

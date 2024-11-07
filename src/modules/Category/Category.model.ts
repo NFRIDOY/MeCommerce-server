@@ -9,8 +9,8 @@ const categorySchema = new Schema<TCategory>({
     },
     images: {
         type: String,
-        required: [true, "Location is required"],
-        unique: true,
+        required: [true, "images is required"],
+        // unique: true,
     },
     isAvailable: {
         type: Boolean,

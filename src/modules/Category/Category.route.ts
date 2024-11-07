@@ -1,16 +1,27 @@
 import express from "express";
-import { auth } from "../../middlewares/auth";
-import { categoryControllers } from './Category.controller';
+import { categoryControllers } from "./Category.controller";
 
 const router = express.Router();
 //** Admin Only */
 /** POST /category */
-router.post("/", auth("admin"), categoryControllers.createCategory);
+router.post(
+    "/",
+    // auth("admin"),
+    categoryControllers.createCategory
+);
 // router.post("/", categoryControllers.createCategory);
 /** PUT /api/category/:id */
-router.put("/:id", auth("admin"), categoryControllers.updateCategoryById);
+router.put(
+    "/:id",
+    // auth("admin"),
+    categoryControllers.updateCategoryById
+);
 /** Soft DELETE /api/category/:id */
-router.delete("/:id", auth("admin"), categoryControllers.deleteCategoryById);
+router.delete(
+    "/:id",
+    // auth("admin"),
+    categoryControllers.deleteCategoryById
+);
 
 //*** Any One */
 /** GET A Category By ID */
