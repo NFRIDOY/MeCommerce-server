@@ -33,7 +33,7 @@ app.use(cookieParser());
 app.use("/api/auth", AuthRoutes);
 app.use("/api/user", UserRoutes);
 app.use("/api/category", CategoryRouters);
-app.use("/api/products", ProductsRouters);
+app.use("/api/product", ProductsRouters);
 
 /** Root Routers */
 app.get("/", (req: Request, res: Response) => {
