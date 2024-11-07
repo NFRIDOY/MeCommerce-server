@@ -12,7 +12,7 @@ export const productSchemaObject = {
     },
     price: {
         type: Number,
-        required: [true, "Price Per Hour is required"],
+        required: [true, "Price is required"],
     },
     category: {
         type: Schema.Types.ObjectId,
@@ -20,7 +20,7 @@ export const productSchemaObject = {
     },
     images: {
         type: String,
-        required: [true, "Location is required"],
+        required: [true, "images is required"],
     },
     stockQuantity: {
         type: Number,
